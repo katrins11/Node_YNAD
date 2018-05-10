@@ -15,8 +15,14 @@ app.get('/', (req, res) => {
     var sFooterHTML = gFs.readFileSync( __dirname + '/html/footer.html', 'utf8');
 
     res.send(sHeaderHTML + sIndexHTML + sFooterHTML);
-})
+});
+app.get('/chat', (req, res) => {
+    var sHeaderHTML = gFs.readFileSync( __dirname + '/html/header.html', 'utf8');
+    var sIndexHTML = gFs.readFileSync( __dirname + '/html/chat.html', 'utf8');
+    var sFooterHTML = gFs.readFileSync( __dirname + '/html/footer.html', 'utf8');
 
+    res.send(sHeaderHTML + sIndexHTML + sFooterHTML);
+});
 
 //LISTENING TO PORT
 var port = 1983;

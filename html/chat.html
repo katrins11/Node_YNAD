@@ -1,0 +1,61 @@
+<div class="userChat">
+    <div class="socketChat">
+        <ul id="messages"></ul>
+        <form action="">
+            <input id="name" autocomplete="off" placeholder="Enter Name"/>
+            <input id="m" autocomplete="off" placeholder="Enter Message"/><button>Send</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        // Web Sockets run on port 5000 or any other port you want that is NOT port 80
+        var socket = io("localhost:5000");
+
+        $('form').submit(function(){
+            //EMOJI (take the "C/C++/Java source code"): http://www.fileformat.info/info/unicode/char/1f60a/index.htm
+            //CHANGE SYMBOLS TO EMOJI ICON [ :) // :-) // :( // :-( // :* // ? ]
+            var theMessage = $('#m').val();
+            console.log("Old:" + theMessage);
+            if(theMessage.indexOf('?') > -1){
+                theMessage = theMessage.replace("?", "\uDBFF");
+            }
+            if (theMessage.indexOf(':)') > -1){
+                theMessage = theMessage.replace(":)", "\uD83D\uDE0A");
+            }
+            if (theMessage.indexOf(':-)')  > -1){
+                theMessage = theMessage.replace(":-)", "\uD83D\uDE0A");
+            }
+            if (theMessage.indexOf(':(')  > -1){
+                theMessage = theMessage.replace(":(", "\uD83D\uDE1F");
+            }
+            if (theMessage.indexOf(':-(')  > -1){
+                theMessage = theMessage.replace(":-(", "\uD83D\uDE1F");
+            }
+            if (theMessage.indexOf(':*')  > -1){
+                theMessage = theMessage.replace(":*", "\uD83D\uDE18");
+            }
+            console.log("New:" + theMessage);
+
+            //SENDING THE CHAT
+            var sMessage = $('#name').val() + ": " + theMessage;
+            socket.emit('chat message', sMessage);
+
+            // EMPTYING THE MESSAGE INPUT
+            $('#m').val('');
+            
+            //SCROLL TO BOTTOM SO YOU CAN SEE THE NEWSET MESSAGE
+            $('#messages').animate({scrollTop: $('#messages').prop("scrollHeight")}, 500);
+
+            return false;
+        });
+
+        //DISPLAYING IN CHAT
+        socket.on('chat message', function(jData){
+            $('#messages').append($('<li>').text(jData));
+        });
+    });
+</script>
