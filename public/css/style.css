@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/*
+  *** Author: Katrin D. Sigurðardóttir
+  *** Date: 14 April 2018
+*/
+/*====================================================*/
+/* You can add global styles to this file, and also import other style files */
+@import url(~@angular/material/prebuilt-themes/indigo-pink.css);
+/* *** *** *** Colors *** *** *** */
+/* *** *** *** Font *** *** *** */
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900");
+/* *** *** *** Zero *** *** *** */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* *** *** *** Header *** *** *** */
+h1 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #283849;
+  letter-spacing: 0;
+  line-height: 50px; }
+
+h2 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 200;
+  font-size: 22px;
+  color: #4A4A4A;
+  letter-spacing: 0; }
+
+h3 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: #283849;
+  letter-spacing: -0.41px;
+  line-height: 50px; }
+
+h4 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #283849;
+  letter-spacing: 0; }
+
+h5 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8091A5;
+  letter-spacing: -0.26px;
+  line-height: 20px; }
+
+p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 32px; }
+
+.like {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFBCBC;
+  letter-spacing: 1px;
+  margin-left: 11px; }
+  .like::before {
+    width: 14px;
+    margin-right: 11px; }
+
+/* *** *** *** Buttons *** *** *** */
+.btnNone {
+  margin: 0 40px;
+  border: none;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #8091A5;
+  letter-spacing: 1px;
+  text-align: center; }
+
+.btnDark {
+  width: 140px;
+  height: 40px;
+  background: #283849;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center; }
+
+.btnLight {
+  width: 140px;
+  height: 40px;
+  border: 1px solid #DFE6EE;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #283849;
+  letter-spacing: 0;
+  text-align: center; }
+
+.btnWhite {
+  height: 50px;
+  text-transform: uppercase;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 1;
+  background-color: transparent;
+  border: 1px solid #FFFFFF; }
+
+.btnAdminDark {
+  height: 40px;
+  width: 219px;
+  height: 60px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  background-color: #283849; }
+
+.btnLogo {
+  padding: 0; }
+
+.divWhiteBox {
+  max-width: 1125px;
+  background: #FFFFFF;
+  box-shadow: 4px 6px 20px 0 rgba(49, 86, 126, 0.08); }
+
+.lineLeft {
+  border-left: 1px solid #8091A5; }
+  .lineLeft img {
+    margin-left: 40px;
+    margin-right: 10px; }
+
+.logo {
+  margin-left: 10px;
+  margin-top: 6px; }
+  .logo img {
+    width: 130px; }
+
+/*====================================================*/
+/*====================================================*/
+.headerToolbar {
+  background: #FFFFFF;
+  width: 100%;
+  height: 100px;
+  box-shadow: 0 2px 10px 0 rgba(128, 145, 165, 0.08);
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center; }
+  .headerToolbar .navbar-items {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; }
+    .headerToolbar .navbar-items .navbar-signin-signup {
+      display: flex;
+      flex-flow: row; }
+      .headerToolbar .navbar-items .navbar-signin-signup button {
+        margin: 0 5px; }
+
+/*====================================================*/
+/*====================================================*/
+.front-page {
+  width: 100vw;
+  background-image: url("/images/background/frontpage.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .front-page .front-hero {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: url("/images/background/frontHero.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .front-page .front-hero .front-hero-text {
+      max-width: 410px;
+      padding-left: 195px;
+      padding-top: 150px; }
+      .front-page .front-hero .front-hero-text h1 {
+        color: white; }
+      .front-page .front-hero .front-hero-text p {
+        color: #FFFFFF;
+        margin-top: 15px;
+        margin-bottom: 20px; }
+      .front-page .front-hero .front-hero-text .btnWhite {
+        width: 240px; }
+        .front-page .front-hero .front-hero-text .btnWhite img {
+          margin-left: 15px; }
+  .front-page .front-new-pieces {
+    width: 100%;
+    height: 750px;
+    display: inline-flex;
+    position: relative; }
+    .front-page .front-new-pieces .divWhiteBox {
+      width: 60%;
+      height: 726px;
+      position: absolute;
+      top: -60px;
+      left: 0; }
+    .front-page .front-new-pieces .front-new-pieces-info {
+      margin-top: 110px;
+      width: 40%;
+      margin-left: 60%;
+      padding-left: 3%; }
+      .front-page .front-new-pieces .front-new-pieces-info h1, .front-page .front-new-pieces .front-new-pieces-info p {
+        max-width: 500px;
+        width: 94%;
+        margin-bottom: 30px; }
+  .front-page .front-artist {
+    width: 100%;
+    height: 1920px; }
+    .front-page .front-artist .divWhiteBox {
+      height: 1900px;
+      margin: 0 auto; }
+      .front-page .front-artist .divWhiteBox .front-artist-intro {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        display: inline-flex; }
+        .front-page .front-artist .divWhiteBox .front-artist-intro .front-artist-info {
+          max-width: 350px;
+          margin-top: 30px;
+          margin-left: 70px; }
+          .front-page .front-artist .divWhiteBox .front-artist-intro .front-artist-info p {
+            font-size: 16px;
+            line-height: 26px; }
+        .front-page .front-artist .divWhiteBox .front-artist-intro .front-artist-images {
+          width: 800px;
+          height: 504px;
+          background-image: url("/images/artists/minervaBrown.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: absolute;
+          top: -40px;
+          right: -160px; }
+      .front-page .front-artist .divWhiteBox .front-artist-work {
+        margin: 50px 70px; }
+        .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-carousel {
+          width: 100%;
+          height: 700px;
+          margin-top: 10px; }
+        .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info {
+          margin-bottom: 70px; }
+          .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p {
+            font-size: 16px;
+            line-height: 26px;
+            margin-top: 30px; }
+            .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p img {
+              margin-left: 27px; }
+              .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p img:first-child {
+                margin-left: 85px; }
+  .front-page .front-instagram {
+    width: 100%;
+    height: 350px;
+    padding: 100px 80px; }
+    .front-page .front-instagram h4 img {
+      margin-right: 11px; }
+    .front-page .front-instagram .front-instagram-list {
+      display: inline-flex; }
+      .front-page .front-instagram .front-instagram-list div {
+        margin: 10px 16px; }
+        .front-page .front-instagram .front-instagram-list div:first-child {
+          margin-left: 0; }
+        .front-page .front-instagram .front-instagram-list div:last-child {
+          margin-right: 0; }
+
+/*====================================================*/
+/*====================================================*/
+/*====================================================*/
+/*====================================================*/
+/*====================================================*/
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,138 @@
+.front-page{
+    width: 100vw;
+    background-image: url('/images/background/frontpage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .front-hero{
+        width: 100%;
+        height: calc(100vh - 100px);
+        background-image: url('/images/background/frontHero.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .front-hero-text{
+            max-width: 410px;
+            padding-left: 195px;
+            padding-top: 150px;
+            h1{
+                color: white;
+            }
+            p{
+                color: $white;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+            .btnWhite{
+                width: 240px;
+                img{
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+
+    .front-new-pieces{
+        width: 100%;
+        height: 750px;
+        display: inline-flex;
+        position: relative;
+        .divWhiteBox{
+            // max-width: 831px;
+            width: 60%;
+            height: 726px;
+            position: absolute;
+            top: -60px;
+            left: 0;
+        }
+        .front-new-pieces-info{
+            margin-top: 110px;
+            width: 40%;
+            margin-left: 60%;
+            padding-left: 3%;
+            h1, p{
+                max-width: 500px;
+                width: 94%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .front-artist{
+        width: 100%;
+        height: 1920px;
+        .divWhiteBox{
+            height: 1900px;
+            margin: 0 auto;
+            .front-artist-intro{
+                width: 100%;
+                height: 500px;
+                position: relative;
+                display: inline-flex;
+                .front-artist-info{
+                    max-width: 350px;
+                    margin-top: 30px;
+                    margin-left: 70px;
+                    p{
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                }
+                .front-artist-images{
+                    width: 800px;
+                    height: 504px;
+                    background-image: url('/images/artists/minervaBrown.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: - 40px;
+                    right: -160px;
+                }
+            }
+            .front-artist-work{
+                margin: 50px 70px;
+                .front-artist-carousel{
+                    width: 100%;
+                    height: 700px;
+                    margin-top: 10px;
+
+                }
+                .front-artist-work-info{
+                    margin-bottom: 70px;
+                    p{
+                        font-size: 16px;
+                        line-height: 26px;
+                        margin-top: 30px;
+                        img{
+                            margin-left: 27px;
+                            &:first-child{
+                                margin-left: 85px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .front-instagram{
+        width: 100%;
+        height: 350px;
+        padding: 100px 80px;
+        h4{
+            img{
+                margin-right: 11px;
+            }
+        }
+        .front-instagram-list{
+            display: inline-flex;
+            div{
+                margin: 10px 16px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

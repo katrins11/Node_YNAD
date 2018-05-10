@@ -1,0 +1,175 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* *** *** *** Colors *** *** *** */
+$white: #FFFFFF;
+$black: #000000;
+$darkBlue: #283849;
+$lightBlue: #8091A5;
+$grey: #4A4A4A;
+$lightGrey: #DFE6EE;
+$pink: #FFBCBC;
+
+/* *** *** *** Font *** *** *** */
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900');
+$fontTitilli: 'Titillium Web', sans-serif;
+$fontExtraLight: 200;
+$fontLight: 300;
+$fontRegular: 400;
+$fontSemiBold: 600;
+$fontBold: 700;
+$fontBlack: 900; 
+
+/* *** *** *** Zero *** *** *** */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* *** *** *** Header *** *** *** */
+h1{
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 40px;
+    color: $darkBlue;
+    letter-spacing: 0;
+    line-height: 50px;
+}
+h2{
+    font-family: $fontTitilli;
+    font-weight: $fontExtraLight;
+    font-size: 22px;
+    color: $grey;
+    letter-spacing: 0;
+}
+h3{
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 22px;
+    color: $darkBlue;
+    letter-spacing: -0.41px;
+    line-height: 50px;
+}
+h4{
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 16px;
+    color: $darkBlue;
+    letter-spacing: 0;
+}
+h5{
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 14px;
+    color: $lightBlue;
+    letter-spacing: -0.26px;
+    line-height: 20px;
+}
+p{
+    font-family: $fontTitilli;
+    font-weight: $fontLight;
+    font-size: 20px;
+    color: $black;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.like{
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $pink;
+    letter-spacing: 1px;
+    margin-left: 11px;
+    &::before{
+        // content: url('blackCarrot.png');
+        width: 14px;
+        margin-right: 11px;
+    }
+}
+
+/* *** *** *** Buttons *** *** *** */
+.btnNone{
+    margin: 0 40px;
+    border: none;
+    text-transform: uppercase;
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $lightBlue;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.btnDark{
+    width: 140px;
+    height: 40px;
+    background: $darkBlue;
+    color: $white;
+    text-transform: uppercase;
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $white;
+    letter-spacing: 0;
+    text-align: center;
+}
+.btnLight{
+    width: 140px;
+    height: 40px;
+    border: 1px solid $lightGrey;
+    text-transform: uppercase;
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $darkBlue;
+    letter-spacing: 0;
+    text-align: center;
+}
+.btnWhite{
+    height: 50px;
+    text-transform: uppercase;
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $white;
+    letter-spacing: 1;
+    background-color: transparent;
+    border: 1px solid $white;
+}
+.btnAdminDark{
+    height: 40px;
+    width: 219px;
+    height: 60px;
+    font-family: $fontTitilli;
+    font-weight: $fontSemiBold;
+    font-size: 12px;
+    color: $white;
+    letter-spacing: 0;
+    text-align: center;
+    background-color: $darkBlue;
+}
+.btnLogo{
+    padding: 0;
+}
+
+.divWhiteBox{
+    max-width: 1125px;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0 rgba(49,86,126,0.08);
+}
+
+.lineLeft{
+    border-left: 1px solid $lightBlue;
+    img{
+        margin-left: 40px;
+        margin-right: 10px;
+    }
+}
+
+.logo{
+    margin-left: 10px;
+    margin-top: 6px;
+    img {
+        width: 130px;
+    }
+}
