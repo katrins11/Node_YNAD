@@ -18,6 +18,7 @@
         $('form').submit(function(){
             //EMOJI (take the "C/C++/Java source code"): http://www.fileformat.info/info/unicode/char/1f60a/index.htm
             //CHANGE SYMBOLS TO EMOJI ICON [ :) // :-) // :( // :-( // :* // ? ]
+            var user = $('#name').val();
             var theMessage = $('#m').val();
             //console.log("Old:" + theMessage);
             if(theMessage.indexOf('?') > -1){
@@ -41,7 +42,7 @@
             //console.log("New:" + theMessage);
 
             //SENDING THE CHAT
-            var sMessage = $('#name').val() + ": " + theMessage;
+            var sMessage = user + ": " + theMessage;
             socket.emit('chat message', sMessage);
 
             // EMPTYING THE MESSAGE INPUT
