@@ -4,8 +4,6 @@
   *** Date: 14 April 2018
 */
 /*====================================================*/
-/* You can add global styles to this file, and also import other style files */
-@import url(~@angular/material/prebuilt-themes/indigo-pink.css);
 /* *** *** *** Colors *** *** *** */
 /* *** *** *** Font *** *** *** */
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900");
@@ -282,6 +280,66 @@ p {
 
 /*====================================================*/
 /*====================================================*/
+/*====================================================*/
+/*====================================================*/
+.userChat {
+  font: 13px Helvetica, Arial;
+  background-color: #353535; }
+  .userChat .socketChat {
+    width: 80%;
+    height: 80vh;
+    position: relative;
+    margin-top: 6%;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 5px; }
+  .userChat form {
+    width: 100%;
+    padding: 3px;
+    position: absolute;
+    bottom: 0; }
+    .userChat form #m {
+      width: 75%;
+      border: 0;
+      padding: 10px;
+      margin-right: .5%; }
+    .userChat form #name {
+      border: 0;
+      padding: 10px;
+      width: 15%;
+      margin-right: .1%; }
+    .userChat form button {
+      width: 9%;
+      background: #C6A782;
+      border: none;
+      padding: 10px; }
+    .userChat form #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: 95%;
+      overflow: auto;
+      vertical-align: bottom;
+      overflow-y: scroll; }
+      .userChat form #messages li {
+        padding: 12px 10px; }
+        .userChat form #messages li:nth-child(odd) {
+          background: #eee; }
+    .userChat form img {
+      width: 35px;
+      height: 35px;
+      display: block;
+      margin: 0 auto; }
+    .userChat form p {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
+
 /*====================================================*/
 /*====================================================*/
 /*====================================================*/

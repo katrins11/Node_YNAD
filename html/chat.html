@@ -19,7 +19,7 @@
             //EMOJI (take the "C/C++/Java source code"): http://www.fileformat.info/info/unicode/char/1f60a/index.htm
             //CHANGE SYMBOLS TO EMOJI ICON [ :) // :-) // :( // :-( // :* // ? ]
             var theMessage = $('#m').val();
-            console.log("Old:" + theMessage);
+            //console.log("Old:" + theMessage);
             if(theMessage.indexOf('?') > -1){
                 theMessage = theMessage.replace("?", "\uDBFF");
             }
@@ -38,7 +38,7 @@
             if (theMessage.indexOf(':*')  > -1){
                 theMessage = theMessage.replace(":*", "\uD83D\uDE18");
             }
-            console.log("New:" + theMessage);
+            //console.log("New:" + theMessage);
 
             //SENDING THE CHAT
             var sMessage = $('#name').val() + ": " + theMessage;
