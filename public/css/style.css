@@ -246,7 +246,7 @@ p, .p {
           background-size: cover;
           position: absolute;
           top: -40px;
-          right: -160px; }
+          right: -115px; }
       .front-page .front-artist .divWhiteBox .front-artist-work {
         margin: 50px 70px; }
         .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-carousel {
@@ -264,15 +264,16 @@ p, .p {
               .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p img:first-child {
                 margin-left: 85px; }
   .front-page .front-instagram {
-    width: 100%;
+    width: calc(100% - 120px);
     height: 350px;
-    padding: 100px 80px; }
+    padding: 100px 60px; }
     .front-page .front-instagram h4 img {
       margin-right: 11px; }
     .front-page .front-instagram .front-instagram-list {
-      display: inline-flex; }
+      display: flex;
+      justify-content: space-around; }
       .front-page .front-instagram .front-instagram-list div {
-        margin: 10px 16px; }
+        margin: 10px 10px; }
         .front-page .front-instagram .front-instagram-list div:first-child {
           margin-left: 0; }
         .front-page .front-instagram .front-instagram-list div:last-child {

@@ -84,7 +84,7 @@
                     background-size: cover;
                     position: absolute;
                     top: - 40px;
-                    right: -160px;
+                    right: -115px;
                 }
             }
             .front-artist-work{
@@ -113,18 +113,19 @@
         }
     }
     .front-instagram{
-        width: 100%;
+        width: calc(100% - 120px);
         height: 350px;
-        padding: 100px 80px;
+        padding: 100px 60px;
         h4{
             img{
                 margin-right: 11px;
             }
         }
         .front-instagram-list{
-            display: inline-flex;
+            display: flex;
+            justify-content: space-around;
             div{
-                margin: 10px 16px;
+                margin: 10px 10px;
                 &:first-child{
                     margin-left: 0;
                 }
