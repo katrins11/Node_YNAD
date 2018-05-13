@@ -1,0 +1,56 @@
+<div id="signUp">
+    <div id="formSignUp">
+        <div class="formSignUp__header">
+            <div class="formSignUp__header__close">
+                close
+            </div>
+            <div class="formSignUp__header__logo"></div>
+            <h2>Sign up to Young Nordic Artists & Designers</h2>
+        </div>
+        <!-- <form id="signUpForm" action="/submit-sign-up" method="post"> -->
+        <form id="signUpForm" class="signUpForm">                
+            <div class="signUpTwoInLine">
+                <input class="h5" placeholder="Firstname" name="user[firstname]">
+                <input class="h5" placeholder="Lastname" name="user[lastname]">
+            </div>
+            <input class="h5" placeholder="Email" name="user[email]">
+            <input class="h5" placeholder="Password" name="user[password]">
+            <input class="h5" placeholder="Phone Number" name="user[phone_number]">
+            <div class="signUpTwoInLine">
+                <input class="h5" placeholder="City" name="user[email]">
+                <input class="h5" placeholder="Country" name="user[password]">
+                <!-- <mat-option value="option" name="location">Option</mat-option> -->
+            </div>
+            <input class="h5" placeholder="Instagram url" name="user[instagram_url]">
+            <input class="h5" placeholder="Facebook url" name="user[facebook_url]">
+            <input class="h5" placeholder="Twitter url" name="user[twitter_url]">
+            <input class="h5" placeholder="Profession" name="user[profession]">
+            
+            <textarea id="" cols="30" rows="10" class="h5" placeholder="Description" name="user[description]"></textarea>
+            <!-- <input type='file' (change)="signUpImg($event)" name="profile_image">
+            <img [src]="formImage"> -->
+            <!-- <button id="btnSignUp" type="submit" >Login</button> -->
+            <button type="button" id="btnSignUpFacebook" class="btnLight">Sign up USING FACEBOOK</button>
+            <button type="button" id="btnSignUp" class="btnDark">Login</button>
+        </form>
+    </div>
+</div>
+<script>
+    var formSerialized = $('#signUpForm').serialize();
+    $('#btnSignUp').click(function() {
+        console.log(formSerialized);
+        $.post('/submit-sign-up', formSerialized, function(data){
+            //VIRKAR ekki en þarf að rederectað
+            console.log(data);
+            if(data.success == 'ok') {
+                console.log("her");
+                location.replace("/home");
+                // url = url.replace(re,"/"+langto+"/"); 
+                // window.location = url;
+                // location.href = '/home';
+                // location.replace("/home");
+                
+            }
+        });
+    });
+</script>

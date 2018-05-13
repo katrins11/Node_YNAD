@@ -3,6 +3,7 @@ $white: #FFFFFF;
 $black: #000000;
 $darkBlue: #283849;
 $lightBlue: #8091A5;
+$lineBlue: #E9EFF4;
 $grey: #4A4A4A;
 $lightGrey: #DFE6EE;
 $pink: #FFBCBC;
@@ -24,7 +25,7 @@ $fontBlack: 900;
 }
 
 /* *** *** *** Header *** *** *** */
-h1{
+h1, .h1{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 40px;
@@ -32,14 +33,14 @@ h1{
     letter-spacing: 0;
     line-height: 50px;
 }
-h2{
+h2, .h2{
     font-family: $fontTitilli;
     font-weight: $fontExtraLight;
     font-size: 22px;
     color: $grey;
     letter-spacing: 0;
 }
-h3{
+h3, .h3{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 22px;
@@ -47,14 +48,14 @@ h3{
     letter-spacing: -0.41px;
     line-height: 50px;
 }
-h4{
+h4, .h4{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 16px;
     color: $darkBlue;
     letter-spacing: 0;
 }
-h5{
+h5, .h5{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
     font-size: 14px;
@@ -62,7 +63,7 @@ h5{
     letter-spacing: -0.26px;
     line-height: 20px;
 }
-p{
+p, .p{
     font-family: $fontTitilli;
     font-weight: $fontLight;
     font-size: 20px;

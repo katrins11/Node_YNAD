@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
   *** Author: Katrin D. Sigurðardóttir
-  *** Date: 14 April 2018
+  *** Date: April 2018
 */
 /*====================================================*/
 /* *** *** *** Colors *** *** *** */
@@ -13,7 +13,7 @@
   padding: 0; }
 
 /* *** *** *** Header *** *** *** */
-h1 {
+h1, .h1 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 40px;
@@ -21,14 +21,14 @@ h1 {
   letter-spacing: 0;
   line-height: 50px; }
 
-h2 {
+h2, .h2 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 200;
   font-size: 22px;
   color: #4A4A4A;
   letter-spacing: 0; }
 
-h3 {
+h3, .h3 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 22px;
@@ -36,14 +36,14 @@ h3 {
   letter-spacing: -0.41px;
   line-height: 50px; }
 
-h4 {
+h4, .h4 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #283849;
   letter-spacing: 0; }
 
-h5 {
+h5, .h5 {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -51,7 +51,7 @@ h5 {
   letter-spacing: -0.26px;
   line-height: 20px; }
 
-p {
+p, .p {
   font-family: "Titillium Web", sans-serif;
   font-weight: 300;
   font-size: 20px;
@@ -280,6 +280,65 @@ p {
 
 /*====================================================*/
 /*====================================================*/
+#signUp {
+  width: 100%;
+  background-color: rgba(40, 56, 73, 0.5);
+  padding-bottom: 85px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 100px; }
+
+#formSignUp {
+  width: 720px;
+  margin-top: 55px;
+  background-color: #FFFFFF; }
+  #formSignUp .formSignUp__header {
+    width: 100%;
+    height: 135px;
+    padding-top: 30px;
+    background-color: #F9FDFF;
+    position: relative; }
+    #formSignUp .formSignUp__header__close {
+      position: absolute;
+      top: 30px;
+      right: 30px; }
+    #formSignUp .formSignUp__header__logo {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      background-image: url("/images/logo/logoBox.svg");
+      background-repeat: no-repeat;
+      background-size: cover; }
+    #formSignUp .formSignUp__header h2 {
+      text-align: center;
+      font-size: 20px; }
+  #formSignUp .signUpForm {
+    width: 70%;
+    margin: 65px 15%; }
+  #formSignUp input {
+    width: 100%;
+    height: 35px;
+    margin: 14px 0;
+    border: none;
+    border-bottom: 1px solid #DFE6EE; }
+  #formSignUp textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #DFE6EE; }
+  #formSignUp .h5 {
+    font-weight: 400; }
+  #formSignUp .signUpTwoInLine {
+    width: 100%;
+    display: inline-flex; }
+    #formSignUp .signUpTwoInLine input {
+      width: 48%; }
+      #formSignUp .signUpTwoInLine input:first-child {
+        margin-right: 4%; }
+  #formSignUp button {
+    width: 100%;
+    margin-top: 25px; }
+
 /*====================================================*/
 /*====================================================*/
 .userChat {
@@ -342,6 +401,51 @@ p {
 
 /*====================================================*/
 /*====================================================*/
+.my-pieces-cards {
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-self: center;
+  margin: 0 auto; }
+
+.piece-card {
+  width: 281px;
+  height: fit-content;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px 0 rgba(128, 145, 165, 0.08);
+  margin-bottom: 26px;
+  margin: 1%; }
+  .piece-card p {
+    font-size: 14px; }
+  .piece-card .piece-card-image {
+    width: 100%; }
+  .piece-card .piece-card-content .card-title-price {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center; }
+    .piece-card .piece-card-content .card-title-price h3 {
+      font-size: 16px;
+      line-height: 1; }
+  .piece-card .piece-card-content .card-line {
+    height: 1px;
+    width: 100%;
+    background-color: #E9EFF4; }
+  .piece-card .piece-card-content span {
+    color: #FFBCBC; }
+
+/*====================================================*/
+/*====================================================*/
+.footerToolbar {
+  background-color: transparent;
+  height: 165px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center; }
+
 /*====================================================*/
 
 /*# sourceMappingURL=style.css.map */
