@@ -1,24 +1,7 @@
-var mysql = require('mysql');
-
-/* *** *** OUR DATABASE *** *** */
-global.db = mysql.createConnection({
-    host: "localhost",
-    user: "admin",
-    password: "password",
-    database: "dbynad",
-    port: 8889
-});
-
-/* *** *** CONNET TO OUR DATABASE *** *** */
-db.connect(err => {
-    if(err){console.log(err), process.exit()}
-    console.log('connected');
-});
-
 jUser = {};
 
 /* *** *** SELECT ALL USERS *** *** */
-// getUsers = function(req,res) {
+// jUser.getUsers = function(req,res) {
 //     var stmt = 'SELECT * FROM users';
 
 //     db.query(stmt, (err, ajData)=>{
@@ -29,22 +12,35 @@ jUser = {};
 //     });
 // } 
 
+/* *** *** GET USERLOCATION *** *** */
+jUser.getUserLocation = function(req,res){
+    var stmt = 'SELECT * FROM location';
+    
+    db.query(stmt, (err, ajData)=>{
+        if(err){
+            return res.send('We had some problem getting userRoles');
+        }
+        console.log(ajData);
+        res.json(ajData);
+    });
+}
+
 /* *** *** INSERT USER *** *** */
 jUser.saveUser = function(req, res) {
 	var jUserData = {
-        'firstname': req.body.user.firstname,
-        'lastname': req.body.user.lastname,
-        'profession': req.body.user.profession,
-        'description': req.body.user.description,
-        'email': req.body.user.email,
-        'password': req.body.user.password,
-        'phone_number': req.body.user.phone_number,
-        'instagram_url': req.body.user.instagram_url,
-        'facebook_url': req.body.user.facebook_url,
-        'twitter_url': req.body.user.twitter_url,
+        'firstname': req.body.firstname,
+        'lastname': req.body.lastname,
+        'profession': req.body.profession,
+        'description': req.body.description,
+        'email': req.body.email,
+        'password': req.body.password,
+        'phone_number': req.body.phone_number,
+        'instagram_url': req.body.instagram_url,
+        'facebook_url': req.body.facebook_url,
+        'twitter_url': req.body.twitter_url,
         'profile_image': 'https://www.facebook.com/photo.php?fbid=10156189333629698&set=a.10150098855654698.298997.616564697&type=3&theater',
         'roles_idroles': '2',
-        'location_idlocation': '1',
+        'location_idlocation': req.body.location,
     }
     // console.log(req.body.user.firstname);    
     //console.log(jUserData);
