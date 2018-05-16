@@ -19,6 +19,9 @@ global.LocalStrategy = require('passport-local').Strategy;
 global.MySQLStore = require('express-mysql-session')(session);
 //WHAT IS bcrypt FOR?
 global.bcrypt = require('bcrypt');
+//WHAT IS mailer FOR? It is to verify the user when he signes up. 
+global.mailer = require('node-mailer');
+global.nodemailer = require('nodemailer');
 
 // app.use(formidable());
 app.use(express.static(__dirname + '/public'));
@@ -92,6 +95,17 @@ app.get('/sign-up', (req, res) => {
 });
 app.post('/sign-up', (req, res) => {
     UserFile.saveUser(req, res);
+});
+app.get('/verification', (req, res) => {
+    token = "hi";
+    db.query('SELECT * FROM users WHERE secretToken = ?', [token], (err, results, fields)=>{
+        if(err){ done(err);}
+        else{
+            db.query('UPDATE users SET active=true WHERE secretToken="hi"', (err, results, fields)=>{
+                console.log("user is now active");
+            });
+        }
+    });
 });
 
 /* *** *** Pieces *** *** */

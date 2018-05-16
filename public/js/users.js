@@ -20,6 +20,17 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// new mailer.Mail({
+// 	from: 'noreply@domain.com',
+// 	to: 'rodolphe@domain.com',
+// 	subject: 'My Subject',
+// 	body: 'My body',
+// 	callback: function(err, data){
+// 		console.log(err);
+// 		console.log(data);
+// 	}
+// });
+
 jUser = {};
 
 /* *** *** SELECT ALL USERS *** *** */
@@ -49,39 +60,60 @@ jUser.getUserLocation = function(req,res){
 /* *** *** INSERT USER *** *** */
 jUser.saveUser = function(req, res) {
     //console.log("sign up: ", req.body);
-    var firstname= req.body.firstname;
-    var lastname= req.body.lastname;
-    var profession= req.body.profession;
-    var description= req.body.description;
-    var email= req.body.email;
-    var password= req.body.password;
-    var phone_number= req.body.phone_number;
-    var instagram_url= req.body.instagram_url;
-    var facebook_url= req.body.facebook_url;
-    var twitter_url= req.body.twitter_url;
-    var profile_image= req.body.profile_image;
-    var roles_idroles= '2';
-    var location_idlocation= req.body.location;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+    var profession = req.body.profession;
+    var description = req.body.description;
+    var email = req.body.email;
+    var password = req.body.password;
+    var phone_number = req.body.phone_number;
+    var instagram_url = req.body.instagram_url;
+    var facebook_url = req.body.facebook_url;
+    var twitter_url = req.body.twitter_url;
+    var profile_image = req.body.profile_image;
+    var roles_idroles = '2';
+    var location_idlocation = req.body.location;
+    var active = false;
+    var secretToken = 'hi';
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         //need to put the query in here but then we need to do something like
         // "INSERT INTO users (firstname, ..., hash)..."
         // db.query('INSERT INTO users (firstname, lastname, profession, description, email, password, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', [firstname, lastname, profession, description, email, hash, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation], (error, jData, fields) => {
-        db.query('INSERT INTO users (firstname, lastname, profession, description, email, password, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)', [firstname, lastname, profession, description, email, password, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation], (error, jData, fields) => {      
+        db.query('INSERT INTO users (firstname, lastname, profession, description, email, password, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation, active, secretToken) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [firstname, lastname, profession, description, email, password, phone_number, instagram_url, facebook_url, twitter_url, profile_image, roles_idroles, location_idlocation, active, secretToken], (error, jData, fields) => {      
             if(error) {
                 throw error;
             }
             if(jData.affectedRows == 1){
                 console.log('great, JSON user inserted');
-                var selectStmt = 'SELECT LAST_INSERT_ID() as user_id';
-                db.query(selectStmt, (error, results, fields) => {
-                    if(error) throw error;
-                    const user_id = results[0];
-                    console.log(user_id);
-                    req.login(user_id, (err)=>{
-                        res.redirect('/admin-add-piece');
-                    });
+
+                //SEND MAIL TO USER MAIL
+                var transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'ynadgallery@gmail.com',
+                        pass: 'ynad0040'
+                    }
                 });
+                    
+                var mailOptions = {
+                    from: 'ynadgallery@gmail.com',
+                    to: req.body.email,
+                    subject: 'Sending Email using Node.js',
+                    text: 'That was easy!',
+                    html: '<a href="http://194.182.245.58/verification/hi">Verify yourself for YNAD</button>'
+                };
+                      
+                transporter.sendMail(mailOptions, function(error, info){
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
+           
+                //REDERECT TO HOME OR LOGIN
+                res.redirect('/log-in');
             }
         });
     }); 
@@ -100,13 +132,14 @@ passport.use(new LocalStrategy(
     function(username, password, done) {
         //console.log(username);
         //console.log("put in password", password);
-        db.query('SELECT idusers, password FROM users WHERE email = ?', [username], (err, results, fields)=>{
+        db.query('SELECT idusers, password, active FROM users WHERE email = ?', [username], (err, results, fields)=>{
             if(err){ done(err); }
 
             if(results.length === 0){
                 done(null, false);
             }
             else{
+                //Is ACTIVE user ACTIVE
                 console.log('db password:' ,results[0].password.toString());
                 const dbPassword = results[0].password.toString();
                 // const hash = results[0].password.toString();
@@ -127,6 +160,8 @@ passport.use(new LocalStrategy(
         });
     }
 ));
+
+//MAKE FUNCTIoN that changes the stadu from false to true of the actvie
 
 module.exports = jUser;
 
