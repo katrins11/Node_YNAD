@@ -1,13 +1,37 @@
-<div class="userChat">
-    <div class="socketChat">
-        <ul id="messages"></ul>
-        <form action="">
-            <input id="name" autocomplete="off" placeholder="Enter Name"/>
-            <input id="m" autocomplete="off" placeholder="Enter Message"/><button>Send</button>
-        </form>
+<section class="admin-header">
+    <div class="admin-headerToolbar">
+        <div class="admin-navbar-items">
+            <a href="/admin-my-profile" class="btnAdminDark">My Profile</a>
+            <a href="/admin-my-pieces" class="btnAdminDark">My Pieces</a>
+            <a href="/admin-add-piece" class="btnAdminDark">Admit New Piece</a>
+            <a href="/admin-chat" class="btnAdminDark">Need Help?</a>
+            <a href="/log-out" class="btnAdminDark">Sign Out</a>  
+        </div>
     </div>
-</div>
-
+</section>
+<section class="admin-chat">
+    <div class="userChat">
+        <div class="socketChat">
+            <ul id="messages"></ul>
+            <form class="chat-form">
+                <div class="chat-inputs">
+                    <div class="nameInput">
+                        <input id="name" autocomplete="off" placeholder="Enter your Name"/>
+                    </div>
+                    <div class="messageInput">
+                        <input id="m" autocomplete="off" placeholder="Enter Message"/>
+                    </div>
+                </div>
+                <div class="chat-info-send">
+                    <p>Send us your name and query and we will reply shortly</p>
+                    <button class="btnDark">Send Message</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</section>
+      
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>

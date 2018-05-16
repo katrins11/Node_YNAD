@@ -4,10 +4,15 @@ $black: #000000;
 $darkBlue: #283849;
 $lightBlue: #8091A5;
 $lineBlue: #E9EFF4;
+$hoverBlue: #384C61;
 $grey: #4A4A4A;
 $lightGrey: #DFE6EE;
 $pink: #FFBCBC;
 $admin: #F9FDFF;
+$inputText: #B2B2B2;
+$statusApproved: #73AD21;
+$statusPending: #e0d612;
+$statusDenied: #ad2121;
 
 /* *** *** *** Font *** *** *** */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,600,700,900');
@@ -72,7 +77,10 @@ p, .p{
     letter-spacing: 0;
     line-height: 32px;
 }
-
+button {
+    outline: none;
+    border: none;
+}
 .like{
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
@@ -86,7 +94,6 @@ p, .p{
         margin-right: 11px;
     }
 }
-
 /* *** *** *** Buttons *** *** *** */
 .btnNone{
     margin: 0 40px;
@@ -100,7 +107,7 @@ p, .p{
     text-align: center;
     text-decoration: none;
 }
-.btnDark{
+.btnDark {
     width: 140px;
     height: 40px;
     background: $darkBlue;
@@ -111,6 +118,7 @@ p, .p{
     font-size: 12px;
     color: $white;
     letter-spacing: 0;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,6 +133,7 @@ p, .p{
     font-size: 12px;
     color: $darkBlue;
     letter-spacing: 0;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,29 +148,33 @@ p, .p{
     letter-spacing: 1;
     background-color: transparent;
     border: 1px solid $white;
+    text-decoration: none;
 }
-.btnAdminDark{
-    height: 40px;
+.btnAdminDark{    
     width: 219px;
     height: 60px;
+    line-height: 60px;
     font-family: $fontTitilli;
     font-weight: $fontSemiBold;
-    font-size: 12px;
+    font-size: 13px;
     color: $white;
     letter-spacing: 0;
     text-align: center;
+    text-decoration: none;
     background-color: $darkBlue;
+    border-left: 1px solid $hoverBlue;
+    &:hover {
+        background-color: $hoverBlue;
+    }
 }
 .btnLogo{
     padding: 0;
 }
-
 .divWhiteBox{
     max-width: 1125px;
     background: #FFFFFF;
     box-shadow: 4px 6px 20px 0 rgba(49,86,126,0.08);
 }
-
 .lineLeft{
     border-left: 1px solid $lightBlue;
     img{
@@ -169,11 +182,13 @@ p, .p{
         margin-right: 10px;
     }
 }
-
 .logo{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 6px;
     img {
         width: 130px;
     }
+}
+.hideInput {
+    display: none;
 }

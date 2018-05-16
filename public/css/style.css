@@ -59,6 +59,10 @@ p, .p {
   letter-spacing: 0;
   line-height: 32px; }
 
+button {
+  outline: none;
+  border: none; }
+
 .like {
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
@@ -94,6 +98,7 @@ p, .p {
   font-size: 12px;
   color: #FFFFFF;
   letter-spacing: 0;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -108,6 +113,7 @@ p, .p {
   font-size: 12px;
   color: #283849;
   letter-spacing: 0;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -121,19 +127,24 @@ p, .p {
   color: #FFFFFF;
   letter-spacing: 1;
   background-color: transparent;
-  border: 1px solid #FFFFFF; }
+  border: 1px solid #FFFFFF;
+  text-decoration: none; }
 
 .btnAdminDark {
-  height: 40px;
   width: 219px;
   height: 60px;
+  line-height: 60px;
   font-family: "Titillium Web", sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 13px;
   color: #FFFFFF;
   letter-spacing: 0;
   text-align: center;
-  background-color: #283849; }
+  text-decoration: none;
+  background-color: #283849;
+  border-left: 1px solid #384C61; }
+  .btnAdminDark:hover {
+    background-color: #384C61; }
 
 .btnLogo {
   padding: 0; }
@@ -150,10 +161,13 @@ p, .p {
     margin-right: 10px; }
 
 .logo {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 6px; }
   .logo img {
     width: 130px; }
+
+.hideInput {
+  display: none; }
 
 /*====================================================*/
 /*====================================================*/
@@ -179,6 +193,55 @@ p, .p {
         margin: 0 5px; }
 
 /*====================================================*/
+/*====================================================*/
+.footer {
+  background-color: #F9FDFF;
+  border-top: 1px solid #E9EFF4; }
+  .footer .footerToolbar {
+    height: 165px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto; }
+    .footer .footerToolbar .footer-newsletter input {
+      width: 480px;
+      height: 38px;
+      border: 1px solid #E9EFF4;
+      margin-top: 10px;
+      outline: none;
+      text-indent: 20px;
+      font-family: "Titillium Web", sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.26px; }
+    .footer .footerToolbar .footer-newsletter input::-webkit-input-placeholder {
+      text-indent: 20px;
+      color: #B2B2B2; }
+    .footer .footerToolbar .footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 47px; }
+      .footer .footerToolbar .footer-nav p {
+        font-size: 14px; }
+      .footer .footerToolbar .footer-nav .footer-social-media a {
+        margin: 0 20px; }
+
+/*====================================================*/
+/*====================================================*/
+.admin-header {
+  width: 100%;
+  background: #283849;
+  height: 60px; }
+  .admin-header .admin-navbar-items {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end; }
+
+/*====================================================*/
+/* *** *** *** *** PAGES *** *** *** *** */
 /*====================================================*/
 .front-page {
   width: 100vw;
@@ -327,14 +390,24 @@ p, .p {
     height: 35px;
     margin: 14px 0;
     border: none;
-    border-bottom: 1px solid #DFE6EE; }
+    border-bottom: 1px solid #DFE6EE;
+    color: #000000; }
+  #formSignUp input.custom-file-input {
+    border-bottom: none;
+    height: 65px; }
+  #formSignUp input::-webkit-input-placeholder {
+    color: #B2B2B2; }
   #formSignUp textarea, #formSignUp select {
     width: 100%;
     border: none;
-    border-bottom: 1px solid #DFE6EE; }
+    border-bottom: 1px solid #DFE6EE;
+    color: #000000; }
+  #formSignUp textarea::-webkit-input-placeholder {
+    color: #B2B2B2; }
   #formSignUp select {
     height: 35px;
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    color: #B2B2B2; }
   #formSignUp .h5 {
     font-weight: 400; }
   #formSignUp .signUpTwoInLine {
@@ -344,108 +417,261 @@ p, .p {
       width: 48%; }
       #formSignUp .signUpTwoInLine input:first-child {
         margin-right: 4%; }
+  #formSignUp .user_image_upload {
+    width: 262px;
+    margin-top: 10px; }
+  #formSignUp .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    outline: none; }
+  #formSignUp .custom-file-input::before {
+    content: 'Select a image from your files';
+    display: inline-block;
+    background: #283849;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    padding: 9px 40px 9px 40px;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    height: 66px;
+    margin-top: 30px; }
+  #formSignUp .custom-file-input:hover::before {
+    background: #384C61; }
+  #formSignUp .custom-file-input:active::before {
+    background: #384C61; }
   #formSignUp button {
     width: 100%;
     margin-top: 25px; }
 
 /*====================================================*/
 /*====================================================*/
-.userChat {
-  font: 13px Helvetica, Arial;
-  background-color: #353535; }
-  .userChat .socketChat {
-    width: 80%;
-    height: 80vh;
-    position: relative;
-    margin-top: 6%;
-    margin-left: 10%;
-    background-color: white;
-    border-radius: 5px; }
-  .userChat form {
+.my-pieces {
+  background-color: #F9FDFF;
+  padding-top: 50px; }
+  .my-pieces .my-pieces-title {
+    width: 50%;
+    margin: 0 auto; }
+    .my-pieces .my-pieces-title h2 {
+      font-size: 40px;
+      font-weight: 600;
+      width: 70%;
+      color: #283849;
+      margin: 0 auto; }
+    .my-pieces .my-pieces-title .my-pieces-search {
+      margin: 0 auto;
+      margin: 10% 0;
+      display: flex;
+      flex: row;
+      justify-content: space-between;
+      align-items: center; }
+      .my-pieces .my-pieces-title .my-pieces-search input {
+        width: 100%;
+        height: 60px;
+        border: 1px solid #E9EFF4;
+        margin: 0 auto;
+        outline: none;
+        text-indent: 20px;
+        font-family: "Titillium Web", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.26px; }
+      .my-pieces .my-pieces-title .my-pieces-search input::-webkit-input-placeholder {
+        text-indent: 20px;
+        color: #B2B2B2; }
+  .my-pieces .my-pieces-cards {
+    width: 86%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0 auto; }
+    .my-pieces .my-pieces-cards .card {
+      background-color: #fff;
+      margin-bottom: 1.6rem;
+      width: 282px;
+      height: fit-content; }
+      .my-pieces .my-pieces-cards .card .card__image {
+        min-height: 100px;
+        background-color: #eee; }
+      .my-pieces .my-pieces-cards .card .card__image img {
+        width: 100%;
+        max-width: 100%;
+        display: block; }
+    .my-pieces .my-pieces-cards .radius {
+      border-radius: 2px; }
+      .my-pieces .my-pieces-cards .radius .border-tlr-radius {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px; }
+    .my-pieces .my-pieces-cards .shadowDepth1 {
+      box-shadow: 4px 6px 20px 0 rgba(49, 86, 126, 0.08); }
+    .my-pieces .my-pieces-cards .card__padding {
+      padding: 0.8rem; }
+    .my-pieces .my-pieces-cards .card__content {
+      position: relative; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-media {
+        font-size: 12px;
+        font-weight: 600;
+        color: #8091A5; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-title {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 0 20px 0; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-artistPrice {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 10px 0; }
+        .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-artistPrice h3 {
+          font-size: 18px;
+          line-height: 1; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-materialSize {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0; }
+        .my-pieces .my-pieces-cards .card__content .piece-card-content .piece-card-materialSize p {
+          font-size: 12px;
+          line-height: 1; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content .card-line {
+        height: 1px;
+        width: 100%;
+        background-color: #E9EFF4;
+        margin: 10px 0; }
+      .my-pieces .my-pieces-cards .card__content .piece-card-content span {
+        color: #FFBCBC;
+        margin-left: 6px;
+        font-size: 14px;
+        font-weight: 600; }
+
+/*====================================================*/
+/* *** *** *** *** ADMIN *** *** *** *** */
+/*====================================================*/
+.admin-my-profile {
+  width: 100vw;
+  background: #F9FDFF;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px; }
+  .admin-my-profile .front-artist {
     width: 100%;
-    padding: 3px;
-    position: absolute;
-    bottom: 0; }
-    .userChat form #m {
-      width: 75%;
-      border: 0;
-      padding: 10px;
-      margin-right: .5%; }
-    .userChat form #name {
-      border: 0;
-      padding: 10px;
-      width: 15%;
-      margin-right: .1%; }
-    .userChat form button {
-      width: 9%;
-      background: #C6A782;
-      border: none;
-      padding: 10px; }
-    .userChat form #messages {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      height: 95%;
-      overflow: auto;
-      vertical-align: bottom;
-      overflow-y: scroll; }
-      .userChat form #messages li {
-        padding: 12px 10px; }
-        .userChat form #messages li:nth-child(odd) {
-          background: #eee; }
-    .userChat form img {
-      width: 35px;
-      height: 35px;
-      display: block;
+    height: 800px; }
+    .admin-my-profile .front-artist .divWhiteBox {
+      height: 700px;
       margin: 0 auto; }
-    .userChat form p {
-      color: white;
-      text-align: center;
-      font-size: 16px;
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      margin: 0 auto; }
+      .admin-my-profile .front-artist .divWhiteBox .user-social {
+        margin-left: 70px;
+        margin-bottom: 40px;
+        width: 180px;
+        display: flex;
+        justify-content: space-between; }
+      .admin-my-profile .front-artist .divWhiteBox .user-info {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 70px;
+        margin-right: 70px; }
+        .admin-my-profile .front-artist .divWhiteBox .user-info .user-email-phone {
+          width: 340px;
+          display: flex;
+          justify-content: space-between; }
+          .admin-my-profile .front-artist .divWhiteBox .user-info .user-email-phone .user-email, .admin-my-profile .front-artist .divWhiteBox .user-info .user-email-phone .user-phone {
+            display: flex; }
+            .admin-my-profile .front-artist .divWhiteBox .user-info .user-email-phone .user-email a, .admin-my-profile .front-artist .divWhiteBox .user-info .user-email-phone .user-phone a {
+              text-decoration: none;
+              text-indent: 10px;
+              font-size: 15px; }
+      .admin-my-profile .front-artist .divWhiteBox .front-artist-intro {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        display: inline-flex; }
+        .admin-my-profile .front-artist .divWhiteBox .front-artist-intro .front-artist-info {
+          max-width: 350px;
+          margin-top: 60px;
+          margin-left: 70px; }
+          .admin-my-profile .front-artist .divWhiteBox .front-artist-intro .front-artist-info p {
+            font-size: 16px;
+            line-height: 26px; }
+        .admin-my-profile .front-artist .divWhiteBox .front-artist-intro .front-artist-images {
+          width: 800px;
+          height: 504px;
+          background-image: url("/images/artists/minervaBrown.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: absolute;
+          top: -40px;
+          right: -160px; }
 
 /*====================================================*/
 /*====================================================*/
-.my-pieces-cards {
-  width: 90%;
+.my-pieces-table {
+  font: 13px Helvetica, Arial; }
+
+.pieces-table {
   display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-self: center;
-  margin: 0 auto; }
+  justify-content: center;
+  padding: 150px 0 150px 0; }
+  .pieces-table table {
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #FFFFFF; }
+    .pieces-table table tbody {
+      display: flex;
+      flex-direction: column; }
+    .pieces-table table p {
+      font-size: 13px;
+      line-height: 20px;
+      width: 100px; }
+    .pieces-table table th, .pieces-table table td {
+      text-align: left;
+      padding: 8px;
+      width: 100px; }
+    .pieces-table table tr {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #E9EFF4; }
+    .pieces-table table tr:nth-child(even) {
+      background-color: #DFE6EE; }
 
-.piece-card {
-  width: 281px;
-  height: fit-content;
-  background: #FFFFFF;
-  box-shadow: 0 2px 10px 0 rgba(128, 145, 165, 0.08);
-  margin-bottom: 26px;
-  margin: 1%; }
-  .piece-card p {
-    font-size: 14px; }
-  .piece-card .piece-card-image {
-    width: 100%; }
-  .piece-card .piece-card-content .card-title-price {
+.pieces-status {
+  display: flex; }
+  .pieces-status .status {
+    border-radius: 15px;
+    padding: 4px;
+    width: 1px;
+    height: 1px;
+    margin: 10px 0 10px 0; }
+  .pieces-status .approved {
+    background: #73AD21; }
+  .pieces-status .pending {
+    background: #e0d612; }
+  .pieces-status .denied {
+    background: #ad2121; }
+
+.piece-thumbnail img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover; }
+
+/*====================================================*/
+/*====================================================*/
+.admin-header {
+  width: 100%;
+  background: #283849;
+  height: 60px; }
+  .admin-header .admin-navbar-items {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center; }
-    .piece-card .piece-card-content .card-title-price h3 {
-      font-size: 16px;
-      line-height: 1; }
-  .piece-card .piece-card-content .card-line {
-    height: 1px;
-    width: 100%;
-    background-color: #E9EFF4; }
-  .piece-card .piece-card-content span {
-    color: #FFBCBC; }
 
-/*====================================================*/
-/*====================================================*/
 #addPiece {
   width: 100%;
   background-color: #F9FDFF;
@@ -453,7 +679,7 @@ p, .p {
   display: flex;
   justify-content: center;
   position: absolute;
-  top: 100px; }
+  top: 160px; }
 
 #formAddPiece {
   width: 720px;
@@ -495,14 +721,166 @@ p, .p {
 
 /*====================================================*/
 /*====================================================*/
-.footerToolbar {
-  background-color: transparent;
-  height: 165px;
-  color: rgba(0, 0, 0, 0.87);
+.admin-chat {
+  width: 100vw;
+  background: #F9FDFF;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .admin-chat .userChat {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1px;
+    box-shadow: 4px 6px 20px 0 rgba(128, 145, 165, 0.08);
+    background: #E9EFF4; }
+    .admin-chat .userChat .socketChat ul {
+      background: #FFFFFF;
+      height: 300px;
+      overflow: scroll;
+      padding: 10px; }
+    .admin-chat .userChat form {
+      background: #dfe6ee;
+      border: 1px solid #dfe6ee;
+      width: 100%;
+      margin: 0 auto; }
+    .admin-chat .userChat .chat-form {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      height: 100px; }
+      .admin-chat .userChat .chat-form .chat-inputs {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%; }
+        .admin-chat .userChat .chat-form .chat-inputs .nameInput input {
+          width: 300px;
+          padding: 10px;
+          outline: none;
+          margin-left: 20px;
+          font-size: 14px; }
+        .admin-chat .userChat .chat-form .chat-inputs .messageInput input {
+          width: 450px;
+          padding: 10px;
+          margin-right: 20px;
+          outline: none;
+          font-size: 14px; }
+        .admin-chat .userChat .chat-form .chat-inputs input::-webkit-input-placeholder {
+          color: #8091A5; }
+      .admin-chat .userChat .chat-form .chat-info-send {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px; }
+        .admin-chat .userChat .chat-form .chat-info-send p {
+          font-size: 16px; }
+    .admin-chat .userChat #messages {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+    .admin-chat .userChat #messages li {
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #283849;
+      background-color: #E9EFF4;
+      max-width: 600px;
+      width: fit-content;
+      position: relative;
+      margin: 15px 10px;
+      word-break: break-all; }
+    .admin-chat .userChat #messages li:nth-child(odd) {
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #283849;
+      background-color: #E9EFF4;
+      max-width: 600px;
+      width: fit-content;
+      position: relative;
+      margin: 15px 10px;
+      word-break: break-all; }
+    .admin-chat .userChat #messages li:after {
+      content: "";
+      width: 20px;
+      height: 12px;
+      display: block;
+      background-image: url("/images/icon/icon-gray-message.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: absolute;
+      bottom: -2px;
+      left: -5px; }
+    .admin-chat .userChat .hide {
+      display: none; }
+    .admin-chat .userChat .show {
+      display: block; }
+
+/*====================================================*/
+/*====================================================*/
+.sendSms {
+  width: 100%;
+  background-color: rgba(40, 56, 73, 0.5);
+  padding-bottom: 85px;
   display: flex;
-  justify-content: space-between;
-  width: 90%;
-  align-items: center; }
+  justify-content: center;
+  position: absolute;
+  top: 100px; }
+
+.formSendSms {
+  width: 720px;
+  margin-top: 55px;
+  background-color: #FFFFFF; }
+  .formSendSms .formSignUp__header {
+    width: 100%;
+    height: 135px;
+    padding-top: 30px;
+    background-color: #F9FDFF;
+    position: relative; }
+    .formSendSms .formSignUp__header__close {
+      position: absolute;
+      top: 30px;
+      right: 30px; }
+    .formSendSms .formSignUp__header__logo {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      background-image: url("/images/logo/logoBox.svg");
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .formSendSms .formSignUp__header h2 {
+      text-align: center;
+      font-size: 20px; }
+  .formSendSms .signUpForm {
+    width: 70%;
+    margin: 65px 15%; }
+  .formSendSms input {
+    width: 100%;
+    height: 35px;
+    margin: 14px 0;
+    border: none;
+    border-bottom: 1px solid #DFE6EE;
+    outline: none; }
+  .formSendSms textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #DFE6EE;
+    outline: none; }
+  .formSendSms .h5 {
+    font-weight: 400; }
+  .formSendSms .signUpTwoInLine {
+    width: 100%;
+    display: inline-flex; }
+    .formSendSms .signUpTwoInLine input {
+      width: 48%; }
+      .formSendSms .signUpTwoInLine input:first-child {
+        margin-right: 4%; }
+  .formSendSms button {
+    width: 100%;
+    margin-top: 25px; }
 
 /*====================================================*/
 

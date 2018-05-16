@@ -1,13 +1,11 @@
-<div id="signUp">
+<section id="signUp">
     <div id="formSignUp">
         <div class="formSignUp__header">
-            <div class="formSignUp__header__close">
-                close
-            </div>
+            <a href="/" class="formSignUp__header__close btnNone">close</a>
             <div class="formSignUp__header__logo"></div>
             <h2>Sign up to Young Nordic Artists & Designers</h2>
         </div>
-        <form id="signUpForm" class="signUpForm">                
+        <form id="signUpForm" class="signUpForm" method="POST" action="/sign-up">                
             <div class="signUpTwoInLine">
                 <input class="h5" placeholder="Firstname" name="firstname">
                 <input class="h5" placeholder="Lastname" name="lastname">
@@ -22,15 +20,31 @@
             <input class="h5" placeholder="Profession" name="profession">
             
             <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
-            <!-- <input type='file' (change)="signUpImg($event)" name="profile_image">
-            <img [src]="formImage"> -->
-            <!-- <button id="btnSignUp" type="submit" >Login</button> -->
+            <input type="file" id="imgInp" class="custom-file-input" name="profile_image">
+            <img class="user_image_upload" id="user-image-upload" src="images/icon/imagePlaceholder.jpg" alt="your image"/>
+ 
             <button type="button" id="btnSignUpFacebook" class="btnLight">Sign up USING FACEBOOK</button>
-            <button type="button" id="btnSignUp" class="btnDark">Login</button>
+            <button type="submit" id="btnSignUp" class="btnDark">SignUp</button>
         </form>
     </div>
-</div>
+</section>
 <script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#user-image-upload').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imgInp").change(function() {
+        readURL(this);
+    });
+
+
     $.get('/get-user-location', function(data){
         $.each(data, function( key, value ) {
             console.log('city: ' + value.city + ' | country: ' +value.country);
@@ -39,18 +53,4 @@
                 .text(value.country + ', ' + value.city)); 
         });
     })
-
-    
-    $('#btnSignUp').click(function() {
-        var formSerialized = $('#signUpForm').serialize();
-        console.log(formSerialized);
-        $.post('/submit-sign-up', formSerialized, function(data){
-            // console.log(data);
-            if(data.success == 'ok') {
-                console.log("her");
-                //location.replace("/home");
-                location.href = '/'; 
-            }
-        });
-    });
 </script>

@@ -1,9 +1,45 @@
-.footerToolbar {
-    background-color: transparent;
-    height: 165px;
-    color: rgba($black, 0.87);
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    align-items: center;
+.footer {
+    background-color: $admin;
+    border-top: 1px solid $lineBlue;
+    .footerToolbar {
+        height: 165px;
+        color: rgba($black, 0.87);
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin: 0 auto;
+        .footer-newsletter {
+            input {
+                width: 480px;
+                height: 38px;
+                border: 1px solid $lineBlue;
+                margin-top: 10px;
+                outline: none;
+                text-indent: 20px;
+                font-family: $fontTitilli;
+                font-size: 14px;
+                font-weight: 300;
+                letter-spacing: -0.26px;
+            }
+            input::-webkit-input-placeholder {
+                text-indent: 20px;
+                color: $inputText;
+            }
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 47px;
+            p {
+                font-size: 14px;
+            }
+            .footer-social-media {
+               a {
+                margin: 0 20px;
+               }
+            }
+        }
+    }
 }

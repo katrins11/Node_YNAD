@@ -1,0 +1,69 @@
+.admin-my-profile{
+    width: 100vw;
+    background: $admin;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    .front-artist{
+        width: 100%;
+        height: 800px;
+        .divWhiteBox{
+            height: 700px;
+            margin: 0 auto;
+            .user-social {
+                margin-left: 70px;
+                margin-bottom: 40px;
+                width: 180px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .user-info {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 70px;
+                margin-right: 70px;
+                .user-email-phone {
+                    width: 340px;
+                    display: flex;
+                    justify-content: space-between;
+                    .user-email, .user-phone {
+                        display: flex;
+                        a {
+                            text-decoration: none;
+                            text-indent: 10px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+            .front-artist-intro{
+                width: 100%;
+                height: 500px;
+                position: relative;
+                display: inline-flex;
+                .front-artist-info{
+                    max-width: 350px;
+                    margin-top: 60px;
+                    margin-left: 70px;
+                    p{
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                }
+                .front-artist-images{
+                    width: 800px;
+                    height: 504px;
+                    background-image: url('/images/artists/minervaBrown.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: - 40px;
+                    right: -160px;
+                }
+            }
+            
+        }
+    }
+}

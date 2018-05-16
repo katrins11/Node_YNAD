@@ -1,25 +1,36 @@
-<div id="addPiece">
-        <div id="formAddPiece">
-            <div class="formAddPiece__header">
-                <h2>Add Piece</h2>
-                <p>When You submit a piece, we will go over it and give you feedback as soon as possible.</p>
-            </div>
-            <form id="addPieceForm" class="addPieceForm">  
-                <input class="h5" placeholder="Title" name="title">
-                <input class="h5" placeholder="Material" name="material">  
-                <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
-                <input class="h5" placeholder="Size" name="size"> 
-                <input class="h5" placeholder="Price" name="price"> 
-                <select name="dateCreated" id="dateCreated"></select>
-                 <!-- <input type='file' (change)="signUpImg($event)" name="profile_image">
-                <img [src]="formImage"> -->
-                <!-- <button id="btnSignUp" type="submit" >Login</button> -->
-                <select name="pieceMedia" id="pieceMedia"></select>
-
-                <button type="button" id="btnSubmitPiece" class="btnDark">Admit Piece</button>
-            </form>
+<section class="admin-header">
+    <div class="admin-headerToolbar">
+        <div class="admin-navbar-items">
+            <a href="/admin-my-profile" class="btnAdminDark">My Profile</a>
+            <a href="/admin-my-pieces" class="btnAdminDark">My Pieces</a>
+            <a href="/admin-add-piece" class="btnAdminDark">Admit New Piece</a>
+            <a href="/admin-chat" class="btnAdminDark">Need Help?</a>
+            <a href="/log-out" class="btnAdminDark">Sign Out</a>  
         </div>
     </div>
+</section>
+<section id="addPiece">
+    <div id="formAddPiece">
+        <div class="formAddPiece__header">
+            <h2>Add Piece</h2>
+            <p>When You submit a piece, we will go over it and give you feedback as soon as possible.</p>
+        </div>
+        <form id="addPieceForm" class="addPieceForm">  
+            <input class="h5" placeholder="Title" name="title">
+            <input class="h5" placeholder="Material" name="material">  
+            <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
+            <input class="h5" placeholder="Size" name="size"> 
+            <input class="h5" placeholder="Price" name="price"> 
+            <select name="dateCreated" id="dateCreated"></select>
+                <!-- <input type='file' (change)="signUpImg($event)" name="profile_image">
+            <img [src]="formImage"> -->
+            <!-- <button id="btnSignUp" type="submit" >Login</button> -->
+            <select name="pieceMedia" id="pieceMedia"></select>
+
+            <button type="button" id="btnSubmitPiece" class="btnDark">Admit Piece</button>
+        </form>
+    </div>
+</section>
     <script>
         $.get('/get-piece-date-created', function(data){
             $.each(data, function( key, value ) {

@@ -34,11 +34,11 @@ jPieces.savePiece = function(req, res) {
         'status_idstatus': '1',
         'year_idyear': req.body.dateCreated,
         'piece_image': req.body.price,
-        'users_idusers': '5',
+        'users_idusers': '1',
         'media_idmedia': req.body.pieceMedia,
     }
     // console.log(req.body.user.firstname);    
-    console.log('info: ',jPieceData);
+    //console.log('info: ',jPieceData);
 
     var stmt = 'INSERT INTO pieces SET ?';
     db.query(stmt, jPieceData, (err, jData) => {

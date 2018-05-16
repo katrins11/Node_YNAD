@@ -48,15 +48,28 @@
         margin: 14px 0;
         border: none;
         border-bottom: 1px solid $lightGrey;
+        color: $black;
+    }
+    input.custom-file-input {
+        border-bottom: none;
+        height: 65px;
+    }
+    input::-webkit-input-placeholder {
+        color: $inputText;
     }
     textarea, select{
         width: 100%;
         border: none;
         border-bottom: 1px solid $lightGrey;
+        color: $black;
+    }
+    textarea::-webkit-input-placeholder {
+        color: $inputText;
     }
     select{
         height: 35px;
         background-color: $white;
+        color: $inputText;
     }
     .h5{
         font-weight: $fontRegular;
@@ -72,6 +85,39 @@
             }
         }
     }
+    .user_image_upload {
+        width: 262px;
+        margin-top: 10px;
+    }
+    .custom-file-input::-webkit-file-upload-button {
+        visibility: hidden;
+        outline: none;
+      }
+      .custom-file-input::before {
+        content: 'Select a image from your files';
+        display: inline-block;
+        // height: 40px;
+        background: $darkBlue;
+        color: $white;
+        text-transform: uppercase;
+        font-family: $fontTitilli;
+        font-weight: $fontSemiBold;
+        padding: 9px 40px 9px 40px;
+        font-size: 12px;
+        color: $white;
+        letter-spacing: 0;
+        text-align: center;
+        text-decoration: none;
+        height: 66px;
+        margin-top: 30px;
+      }
+      .custom-file-input:hover::before {
+        background: $hoverBlue;
+      }
+      .custom-file-input:active::before {
+        background: $hoverBlue;
+      }
+
     button{
         width: 100%;
         margin-top: 25px;

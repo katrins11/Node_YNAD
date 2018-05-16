@@ -1,0 +1,115 @@
+.admin-chat {
+    width: 100vw;
+    background: $admin;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .userChat {
+        width: 60%;        
+        margin: 0 auto;
+        padding: 1px;
+        box-shadow: 4px 6px 20px 0 rgba($lightBlue, 0.08);
+        background: $lineBlue;
+         .socketChat ul {
+            background: $white;
+            height: 300px;
+            overflow: scroll;
+            padding: 10px;
+         }
+         form { 
+            background: #dfe6ee;
+            border: 1px solid #dfe6ee;
+            width: 100%;
+            margin: 0 auto;
+         }
+         .chat-form {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 100px;
+            .chat-inputs {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+               .nameInput input {
+                    width: 300px;
+                    padding: 10px;
+                    outline: none;
+                    margin-left: 20px;
+                    font-size: 14px;
+                }
+                .messageInput input {
+                    width: 450px;
+                    padding: 10px;
+                    margin-right: 20px;
+                    outline: none;  
+                    font-size: 14px;
+                } 
+                input::-webkit-input-placeholder {
+                    color: $lightBlue;
+                }
+            }
+            .chat-info-send {
+                display: flex;
+                flex-flow: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 20px;
+                p {
+                    font-size: 16px;
+                }
+            }
+            
+         }
+         #messages { 
+         list-style-type: none; 
+         margin: 0; 
+         padding: 0; 
+         }
+         #messages li {  
+         font-size: 18px;
+         padding: 10px 20px;
+         border-radius: 25px;
+         color: $darkBlue;
+         background-color: $lineBlue;
+         max-width: 600px;
+         width: fit-content;
+         position: relative;
+         margin: 15px 10px;
+         word-break: break-all;
+         }
+         #messages li:nth-child(odd) { 
+         font-size: 18px;
+         padding: 10px 20px;
+         border-radius: 25px;
+         color: $darkBlue;
+         background-color: $lineBlue;
+         max-width: 600px;
+         width: fit-content;
+         position: relative;
+         margin: 15px 10px;
+         word-break: break-all;
+         }
+         #messages li:after  {
+            content: "";
+            width: 20px;
+            height: 12px;
+            display: block;
+            background-image: url('/images/icon/icon-gray-message.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            bottom: -2px;
+            left: -5px;
+        }
+         .hide {
+         display: none;
+         } 
+         .show {
+         display: block;
+         } 
+    }
+}
