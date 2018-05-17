@@ -172,6 +172,7 @@ button {
 .emptyPage {
   width: 100vw;
   height: calc(100vh - 265px);
+  background-image: url("/images/background/adminMyProfile.png");
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -285,7 +286,7 @@ button {
     height: 750px;
     display: inline-flex;
     position: relative; }
-    .front-page .front-new-pieces .divWhiteBox {
+    .front-page .front-new-pieces .carouselBox {
       width: 60%;
       height: 726px;
       position: absolute;
@@ -333,6 +334,8 @@ button {
           width: 100%;
           height: 700px;
           margin-top: 10px; }
+          .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-carousel img {
+            width: 100%; }
         .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info {
           margin-bottom: 70px; }
           .front-page .front-artist .divWhiteBox .front-artist-work .front-artist-work-info p {
@@ -716,11 +719,11 @@ button {
 #addPiece {
   width: 100%;
   background-color: #F9FDFF;
+  background-image: url("/images/background/pieces.png");
   padding-bottom: 85px;
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 160px; }
+  padding-top: 30px; }
 
 #formAddPiece {
   width: 720px;
@@ -731,12 +734,14 @@ button {
     height: 135px;
     padding-top: 30px;
     position: relative; }
-    #formAddPiece .formAddPiece__header h2 {
-      text-align: center;
-      font-size: 20px; }
+    #formAddPiece .formAddPiece__header h1 {
+      text-align: center; }
+    #formAddPiece .formAddPiece__header p {
+      font-size: 14px;
+      text-align: center; }
   #formAddPiece .addPieceForm {
     width: 70%;
-    margin: 65px 15%; }
+    margin: 15px 15% 65px 15%; }
   #formAddPiece input {
     width: 100%;
     height: 35px;

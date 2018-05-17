@@ -24,30 +24,26 @@ jPieces.getPieceDate = function(req,res){
 }
 
 jPieces.savePiece = function(req, res) {
-    console.log(req.body);
-	var jPieceData = {
-        'title': req.body.title,
-        'material': req.body.material,
-        'description': req.body.description,
-        'size': req.body.size,
-        'price': req.body.price,
-        'status_idstatus': '1',
-        'year_idyear': req.body.dateCreated,
-        'piece_image': req.body.price,
-        'users_idusers': '1',
-        'media_idmedia': req.body.pieceMedia,
-    }
-    // console.log(req.body.user.firstname);    
-    //console.log('info: ',jPieceData);
+    //console.log("insert Piece: ", req.body);
+    var title = req.body.title;
+    var material = req.body.material;
+    var description = req.body.description;
+    var size = req.body.size;
+    var price = req.body.price;
+    var status_idstatus = '1';
+    var year_idyear = req.body.dateCreated;
+    var piece_image = req.body.price;
+    var users_idusers = '1';
+    var media_idmedia = req.body.pieceMedia;
 
-    var stmt = 'INSERT INTO pieces SET ?';
-    db.query(stmt, jPieceData, (err, jData) => {
-        if(err) {
-            return res.send('error');
+    db.query('INSERT INTO pieces (title, material, description, size, price, status_idstatus, year_idyear, piece_image, users_idusers, media_idmedia) VALUES (?,?,?,?,?,?,?,?,?,?)', [title, material, description, size, price, status_idstatus, year_idyear, piece_image, users_idusers, media_idmedia], (error, jData, fields) => {              
+        if(error) {
+            return res.send('We had some problem with adding a piece');
         }
         if(jData.affectedRows == 1){
-            console.log('great, JSON user inserted');
-            res.json({success: 'ok'});
+            console.log('great, JSON piece inserted');
+            //res.json({success: 'ok'});
+            res.redirect('/admin-my-pieces');
         }
     });
 }

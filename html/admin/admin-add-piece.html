@@ -10,12 +10,12 @@
     </div>
 </section>
 <section id="addPiece">
-    <div id="formAddPiece">
+    <div id="formAddPiece" class="divWhiteBox">
         <div class="formAddPiece__header">
-            <h2>Add Piece</h2>
+            <h1>Add Piece</h1>
             <p>When You submit a piece, we will go over it and give you feedback as soon as possible.</p>
         </div>
-        <form id="addPieceForm" class="addPieceForm">  
+        <form id="addPieceForm" class="addPieceForm" method="POST" action="/add-piece">  
             <input class="h5" placeholder="Title" name="title">
             <input class="h5" placeholder="Material" name="material">  
             <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
@@ -28,7 +28,7 @@
  
             <select name="pieceMedia" id="pieceMedia"></select>
 
-            <button type="button" id="btnSubmitPiece" class="btnDark">Admit Piece</button>
+            <button type="submit" id="btnSubmitPiece" class="btnDark">Admit Piece</button>
         </form>
     </div>
 </section>
@@ -50,15 +50,14 @@
             });
         })
 
-        
-        $('#btnSubmitPiece').click(function() {
-            var formPieceSerialized = $('#addPieceForm').serialize();
-            console.log('html info: ', formPieceSerialized);
-            $.post('/submit-piece', formPieceSerialized, function(data){
-                console.log("data: ",data);
-                if(data.success == 'ok') {
-                    console.log("her");
-                }
-            });
-        });
+        // $('#btnSubmitPiece').click(function() {
+        //     var formPieceSerialized = $('#addPieceForm').serialize();
+        //     console.log('html info: ', formPieceSerialized);
+        //     $.post('/submit-piece', formPieceSerialized, function(data){
+        //         console.log("data: ",data);
+        //         if(data.success == 'ok') {
+        //             console.log("her");
+        //         }
+        //     });
+        // });
     </script>

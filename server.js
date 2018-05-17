@@ -177,6 +177,9 @@ app.get('/admin-add-piece', authenticationMiddleware(), (req, res) => {
     var sAddPieceHTML = gFs.readFileSync( __dirname + '/html/admin/admin-add-piece.html', 'utf8');
     res.send(sHeaderHTML + sAddPieceHTML + sFooterHTML);
 });
+app.post('/add-piece',(req, res) => {
+    PiecesFile.savePiece(req, res);
+});
 app.post('/submit-piece',(req, res) => {
     PiecesFile.savePiece(req, res);
 });
