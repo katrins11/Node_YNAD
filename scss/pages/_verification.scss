@@ -1,0 +1,36 @@
+.verification{
+    width: 100vw;
+    height: calc(100vh - 260px);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: $admin;
+    padding-bottom: 85px;
+
+
+    .verificationBox{
+        width: 720px;
+        margin-top: 55px;
+        background-color: $white;
+        form{
+            width: 70%;
+            margin: 65px 15%;
+            input{
+                width: 100%;
+                height: 35px;
+                margin: 14px 0;
+                border: none;
+                border-bottom: 1px solid $lightGrey;
+                color: $black;
+                font-weight: 300;
+            }
+            input.custom-file-input {
+                border-bottom: none;
+                height: 65px;
+            }
+            input::-webkit-input-placeholder {
+                color: $inputText;
+            }
+        }
+    }
+}

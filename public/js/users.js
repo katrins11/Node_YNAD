@@ -12,24 +12,23 @@ var options = {
 var sessionStore = new MySQLStore(options);
 
 app.use(session({
-    secret: 'dsfk30fdj3lfnq',
+    secret: secretTokenGenerator(),
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-// new mailer.Mail({
-// 	from: 'noreply@domain.com',
-// 	to: 'rodolphe@domain.com',
-// 	subject: 'My Subject',
-// 	body: 'My body',
-// 	callback: function(err, data){
-// 		console.log(err);
-// 		console.log(data);
-// 	}
-// });
+//RANDOM
+function secretTokenGenerator() {
+    var length = 20,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
 
 jUser = {};
 
@@ -74,7 +73,7 @@ jUser.saveUser = function(req, res) {
     var roles_idroles = '2';
     var location_idlocation = req.body.location;
     var active = false;
-    var secretToken = 'hi';
+    var secretToken = secretTokenGenerator();
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         //need to put the query in here but then we need to do something like
@@ -95,13 +94,13 @@ jUser.saveUser = function(req, res) {
                         pass: 'ynad0040'
                     }
                 });
-                    
+                const htmlMail = '<p>Congratulations! You are now registered to YNAD!<br><br> Please verify your email by typing the following token: <br><br><strong>Token:</strong> "'+secretToken+'" <br> On the following page: <a href="http://localhost:1983/verification">http://localhost:1983/verification</a></p>'
                 var mailOptions = {
                     from: 'ynadgallery@gmail.com',
                     to: req.body.email,
-                    subject: 'Sending Email using Node.js',
+                    subject: 'Verification mail for YNAD',
                     text: 'That was easy!',
-                    html: '<a href="http://194.182.245.58/verification/hi">Verify yourself for YNAD</button>'
+                    html: htmlMail
                 };
                       
                 transporter.sendMail(mailOptions, function(error, info){
@@ -160,6 +159,20 @@ passport.use(new LocalStrategy(
         });
     }
 ));
+
+/* *** *** VERIFY USER *** *** */
+jUser.verificationUser = function(req,res) {
+    const token = req.body.verificationCode;
+    db.query('SELECT * FROM users WHERE secretToken = ?', [token], (err, results, fields)=>{
+        if(err){ done(err);}
+        else{
+            db.query('UPDATE users SET active=true WHERE secretToken= ?', [token], (err, results, fields)=>{
+                console.log("user is now active");
+            });
+        }
+    });
+    res.redirect('/log-in');
+}
 
 //MAKE FUNCTIoN that changes the stadu from false to true of the actvie
 

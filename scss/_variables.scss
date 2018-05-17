@@ -192,3 +192,10 @@ button {
 .hideInput {
     display: none;
 }
+.emptyPage{
+    width: 100vw;
+    height: calc(100vh - 265px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

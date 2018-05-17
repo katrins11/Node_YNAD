@@ -169,6 +169,13 @@ button {
 .hideInput {
   display: none; }
 
+.emptyPage {
+  width: 100vw;
+  height: calc(100vh - 265px);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /*====================================================*/
 /*====================================================*/
 .headerToolbar {
@@ -205,6 +212,11 @@ button {
     width: 90%;
     align-items: center;
     margin: 0 auto; }
+    .footer .footerToolbar .footer-newsletter form {
+      display: inline-flex; }
+      .footer .footerToolbar .footer-newsletter form button {
+        margin-top: 10px;
+        margin-left: 10px; }
     .footer .footerToolbar .footer-newsletter input {
       width: 480px;
       height: 38px;
@@ -446,6 +458,35 @@ button {
   #formSignUp button {
     width: 100%;
     margin-top: 25px; }
+
+.verification {
+  width: 100vw;
+  height: calc(100vh - 260px);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #F9FDFF;
+  padding-bottom: 85px; }
+  .verification .verificationBox {
+    width: 720px;
+    margin-top: 55px;
+    background-color: #FFFFFF; }
+    .verification .verificationBox form {
+      width: 70%;
+      margin: 65px 15%; }
+      .verification .verificationBox form input {
+        width: 100%;
+        height: 35px;
+        margin: 14px 0;
+        border: none;
+        border-bottom: 1px solid #DFE6EE;
+        color: #000000;
+        font-weight: 300; }
+      .verification .verificationBox form input.custom-file-input {
+        border-bottom: none;
+        height: 65px; }
+      .verification .verificationBox form input::-webkit-input-placeholder {
+        color: #B2B2B2; }
 
 /*====================================================*/
 /*====================================================*/

@@ -97,16 +97,23 @@ app.post('/sign-up', (req, res) => {
     UserFile.saveUser(req, res);
 });
 app.get('/verification', (req, res) => {
-    token = "hi";
-    db.query('SELECT * FROM users WHERE secretToken = ?', [token], (err, results, fields)=>{
-        if(err){ done(err);}
-        else{
-            db.query('UPDATE users SET active=true WHERE secretToken="hi"', (err, results, fields)=>{
-                console.log("user is now active");
-            });
-        }
-    });
+    var sVerificationHTML = gFs.readFileSync( __dirname + '/html/pages/verification.html', 'utf8');
+    res.send(sHeaderHTML + sVerificationHTML + sFooterHTML);
 });
+app.post('/verification',(req, res) => {
+    UserFile.verificationUser(req, res);
+});
+// app.get('/verification', (req, res) => {
+//     token = "hi";
+//     db.query('SELECT * FROM users WHERE secretToken = ?', [token], (err, results, fields)=>{
+//         if(err){ done(err);}
+//         else{
+//             db.query('UPDATE users SET active=true WHERE secretToken="hi"', (err, results, fields)=>{
+//                 console.log("user is now active");
+//             });
+//         }
+//     });
+// });
 
 /* *** *** Pieces *** *** */
 app.get('/pieces', (req, res) => {
