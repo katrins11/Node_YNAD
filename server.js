@@ -31,11 +31,24 @@ app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
 
 /* *** FILES NOT CHANGING SO... CONST *** */
+const sSignUpHTML = gFs.readFileSync( __dirname + '/html/pages/sign-up.html', 'utf8');
+const sVerificationHTML = gFs.readFileSync( __dirname + '/html/pages/verification.html', 'utf8');
+const sLogInHTML = gFs.readFileSync( __dirname + '/html/pages/log-in.html', 'utf8');
+const sAddPieceHTML = gFs.readFileSync( __dirname + '/html/admin/admin-add-piece.html', 'utf8');
+
 const sHeaderHTML = gFs.readFileSync( __dirname + '/html/header.html', 'utf8');
 const sAdminHeaderHTML = gFs.readFileSync( __dirname + '/html/admin-header.html', 'utf8');
-const sHomeHTML = gFs.readFileSync( __dirname + '/html/pages/home.html', 'utf8');
-const sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
 const sFooterHTML = gFs.readFileSync( __dirname + '/html/footer.html', 'utf8');
+
+const sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
+const sHomeHTML = gFs.readFileSync( __dirname + '/html/pages/home.html', 'utf8');
+
+const sAboutHTML = gFs.readFileSync( __dirname + '/html/pages/about.html', 'utf8');
+const sCreativesHTML = gFs.readFileSync( __dirname + '/html/pages/creatives.html', 'utf8');
+
+const sPiecesHTML = gFs.readFileSync( __dirname + '/html/pages/pieces.html', 'utf8');
+const sSmsHTML = gFs.readFileSync( __dirname + '/html/pages/sms.html', 'utf8');
+const sChatHTML = gFs.readFileSync( __dirname + '/html/admin/admin-chat.html', 'utf8');
 
 /* *** CHANGEABLE INFORMATIONS SO... VAR *** */
 var sMyProfileHTML = gFs.readFileSync( __dirname + '/html/admin/admin-my-profile.html', 'utf8');
@@ -91,14 +104,12 @@ app.get('/get-user-location', (req, res) => {
     UserFile.getUserLocation(req, res);
 });
 app.get('/sign-up', (req, res) => {
-    var sSignUpHTML = gFs.readFileSync( __dirname + '/html/pages/sign-up.html', 'utf8');
     res.send(sHeaderHTML + sFrontBackgroundHTML + sSignUpHTML + sFooterHTML);
 });
 app.post('/sign-up', (req, res) => {
     UserFile.saveUser(req, res);
 });
 app.get('/verification', (req, res) => {
-    var sVerificationHTML = gFs.readFileSync( __dirname + '/html/pages/verification.html', 'utf8');
     res.send(sHeaderHTML + sVerificationHTML + sFooterHTML);
 });
 app.post('/verification',(req, res) => {
@@ -108,7 +119,6 @@ app.post('/verification',(req, res) => {
 
 /* *** *** LogIn *** *** */
 app.get('/log-in', (req, res) => {
-    var sLogInHTML = gFs.readFileSync( __dirname + '/html/pages/log-in.html', 'utf8');
     res.send(sHeaderHTML + sFrontBackgroundHTML + sLogInHTML + sFooterHTML);
 });
 app.post('/log-in', passport.authenticate('local',{
@@ -125,7 +135,6 @@ app.get('/log-out', (req, res) => {
 
 /* *** *** About *** *** */
 app.get('/about', (req, res) => {
-    var sAboutHTML = gFs.readFileSync( __dirname + '/html/pages/about.html', 'utf8');
     if(req.isAuthenticated()){
         res.send(sAdminHeaderHTML + sAboutHTML + sFooterHTML);
     }
@@ -137,7 +146,6 @@ app.get('/about', (req, res) => {
 
 /* *** *** Creatives *** *** */
 app.get('/creatives', (req, res) => {
-    var sCreativesHTML = gFs.readFileSync( __dirname + '/html/pages/creatives.html', 'utf8');
     if(req.isAuthenticated()){
         res.send(sAdminHeaderHTML + sCreativesHTML + sFooterHTML);
     }
@@ -149,7 +157,6 @@ app.get('/creatives', (req, res) => {
 
 /* *** *** Pieces *** *** */
 app.get('/pieces', (req, res) => {
-    var sPiecesHTML = gFs.readFileSync( __dirname + '/html/pages/pieces.html', 'utf8');
     if(req.isAuthenticated()){
         res.send(sAdminHeaderHTML + sPiecesHTML + sFooterHTML);
     }
@@ -161,7 +168,6 @@ app.get('/pieces', (req, res) => {
 
 /* *** *** SMS *** *** */
 app.get('/sms', (req, res) => {
-    var sSmsHTML = gFs.readFileSync( __dirname + '/html/pages/sms.html', 'utf8');
     if(req.isAuthenticated()){
         res.send(sAdminHeaderHTML + sFrontBackgroundHTML + sSmsHTML + sFooterHTML);
     }
@@ -298,7 +304,6 @@ app.get('/admin-my-pieces', authenticationMiddleware(), (req, res) => {
 
 /* *** *** Add Piece *** *** */
 app.get('/admin-add-piece', authenticationMiddleware(), (req, res) => {
-    var sAddPieceHTML = gFs.readFileSync( __dirname + '/html/admin/admin-add-piece.html', 'utf8');
     res.send(sAdminHeaderHTML + sAddPieceHTML + sFooterHTML);
 });
 app.post('/add-piece',(req, res) => {
@@ -338,7 +343,6 @@ app.get('/admin-delete-piece/:pieceID', authenticationMiddleware(), (req, res ) 
 
 /* *** *** Chat *** *** */
 app.get('/admin-chat', authenticationMiddleware(), (req, res) => {
-    var sChatHTML = gFs.readFileSync( __dirname + '/html/admin/admin-chat.html', 'utf8');
     res.send(sAdminHeaderHTML + sChatHTML + sFooterHTML);
 });
 
