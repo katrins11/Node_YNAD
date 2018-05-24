@@ -1,6 +1,6 @@
 .admin-my-profile{
     width: 100vw;
-    background: $admin;
+    background-image: url('/images/background/pieces.png');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 100px;
@@ -53,14 +53,15 @@
                     }
                 }
                 .front-artist-images{
-                    width: 800px;
+                    width: 680px;
                     height: 504px;
-                    background-image: url('/images/artists/minervaBrown.png');
-                    background-repeat: no-repeat;
-                    background-size: cover;
+                    overflow: hidden;
                     position: absolute;
-                    top: - 40px;
+                    top: -40px;
                     right: -160px;
+                    img{
+                        width: 100%;
+                    }
                 }
             }
             

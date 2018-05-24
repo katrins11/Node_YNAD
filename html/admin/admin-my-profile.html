@@ -1,44 +1,41 @@
-<section class="admin-header">
-    <div class="admin-headerToolbar">
-        <div class="admin-navbar-items">
-            <a href="/admin-my-profile" class="btnAdminDark">My Profile</a>
-            <a href="/admin-my-pieces" class="btnAdminDark">My Pieces</a>
-            <a href="/admin-add-piece" class="btnAdminDark">Admit New Piece</a>
-            <a href="/admin-chat" class="btnAdminDark">Need Help?</a>
-            <a href="/log-out" class="btnAdminDark">Sign Out</a>  
-        </div>
-    </div>
-</section>
-<section class="admin-my-profile">
+<section class="admin-my-profile" id="myProfile">
     <div class="front-artist">
         <div class="divWhiteBox">
             <div class="front-artist-intro">
                 <div class="front-artist-info">
-                    <h1>Minerva Brown</h1>
-                    <h2>Visual artist - Lund, Sweden</h2>
-                    <p>For most people, buying a new computer does not have to be as stressful as buying a new car. Nor does it have to be as expensive. If you’re like most people, and you have a limited budget for buying a computer, then you need to try to get as much computer for your money as possible.
-                        Sounds pretty obvious. But many people don’t realize they don’t need the fastest, most expensive computer with the most “extras”. In fact, if you are already using an older computer, even the least expensive new computer will be a big upgrade. </p>
+                    <h1>{{userFirstName}} {{userLastName}}</h1>
+                    <h2>{{userProfession}}</h2>
+                    <p>{{userDescription}}</p>
                 </div>
-                <div class="front-artist-images"></div>
+                <div class="front-artist-images">
+                    <img src="{{userProfileImage}}" alt="">
+                </div>
             </div>
             <div class="user-social">
-                <img src="images/icon/facebook.svg" alt="facebook"> 
-                <img src="images/icon/instagram.svg" alt="instagram">
-                <img src="images/icon/twitter.svg" alt="twitter">
+                <a href="{{userFacebook}}" target="_blank"><img src="images/icon/facebook.svg" alt="facebook"></a>
+                <a href="{{userInstagram}}" target="_blank"><img src="images/icon/instagram.svg" alt="instagram"></a>
+                <a href="{{userTwitter}}" target="_blank"><img src="images/icon/twitter.svg" alt="twitter"></a>
             </div>
             <div class="user-info">
                 <div class="user-email-phone">
                     <div class="user-email">
                         <img src="images/icon/email.svg" alt="email">
-                        <a class="p" href="mailto:minerva@gmail.com">minerva@gmail.com</a>
+                        <a class="p" href="mailto:{{userMail}}">{{userMail2}}</a>
                     </div>
                     <div class="user-phone">
                         <img src="images/icon/phone.svg" alt="phone">
-                        <a class="p" href="tel:004593845259">+45 93845259</a>
+                        <a class="p" href="tel:{{userPhone}}">{{userPhone2}}</a>
                     </div>
                 </div>
-                <a href="/admin-edit-profile" class="btnLight">Edit Profile</a>
+                <a href="/admin-edit-profile" class="btnLight" id="{{userID}}">Edit Profile</a>
             </div>
         </div>
     </div>
 </section>
+
+<!-- <script>
+    
+        $.get('/admin-my-profile', function(data){
+            console.log('name: ' + data.firstname);
+        });
+    </script> -->

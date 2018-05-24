@@ -1,14 +1,19 @@
-<section class="admin-header">
-    <div class="admin-headerToolbar">
-        <div class="admin-navbar-items">
-            <a href="/admin-my-profile" class="btnAdminDark">My Profile</a>
-            <a href="/admin-my-pieces" class="btnAdminDark">My Pieces</a>
-            <a href="/admin-add-piece" class="btnAdminDark">Admit New Piece</a>
-            <a href="/admin-chat" class="btnAdminDark">Need Help?</a>
-            <a href="/log-out" class="btnAdminDark">Sign Out</a>  
-        </div>
-    </div>
-</section>
 <section class="admin-edit-profile">
-    <h1>Admin Edit Profile</h1>
+    <section id="addPiece">
+            <div id="formAddPiece" class="divWhiteBox">
+                <div class="formAddPiece__header">
+                    <h1>Edit Your Informations</h1>
+                </div>
+                <form id="editUserForm" class="editUserForm" method="POST" action="/admin-edit-profile">                
+                    <div class="signUpTwoInLine">
+                        <input class="h5" placeholder="Firstname" name="firstname" value="{{getUserFirstName}}">
+                        <input class="h5" placeholder="Lastname" name="lastname" value="{{getUserLastrName}}">
+                    </div>
+                    <input class="h5" placeholder="Email" name="email" value="{{getUseremail}}">
+                    <input class="h5" placeholder="Phone Number" name="phone_number" value="{{getUsernumber}}">
+ 
+                    <button type="submit" class="btnDark">Edit</button>
+                </form>
+            </div>
+        </section>
 </section>

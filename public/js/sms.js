@@ -17,9 +17,6 @@ smsData.sendSmsData = function(req, res) {
         }
     }); 
     res.redirect('/sms');
-    // function(err, httpResponse, body){ 
-    //     console.log(body);   
-    // });
 }
 
 module.exports = smsData;

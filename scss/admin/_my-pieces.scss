@@ -1,39 +1,41 @@
-.my-pieces-table{ 
-    font: 13px Helvetica, Arial; 
-}
-.pieces-table {
-    display: flex;
-    justify-content: center;
-    padding: 150px 0 150px 0;
-    table {
-        border-collapse: collapse;
+.my-pieces{
+    width: 100%;
+    min-height: 60vh;
+    background-image: url('/images/background/pieces.png');
+    .pieces-table {
         width: 80%;
-        background-color: $white;
-        tbody {
-            display: flex;
-            flex-direction: column;
-        }
-        p {
-            font-size: 13px;
-            line-height: 20px;
-            width: 100px;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-            width: 100px;
-            
-        }
-        tr {
-            border-style: solid;
-            border-width: 1px;
-            border-color: $lineBlue;
-        }
-        tr:nth-child(even) {
-            background-color: $lightGrey;
+        padding-top: 30px;
+        margin-left: 10%;
+        table{
+            width: 90%;
+            margin-left: 5%;
+            background-color: $white;
+            border-collapse: collapse;
+            tr {
+                width: 100%;
+                &:nth-child(even) {
+                    background-color: $lightGrey;
+                }
+            }
+            th, td {
+                width: 12.5%;
+                padding: 10px 0;
+                text-align: left;
+                h5{
+                    font-size: 16px;
+                }
+                a{
+                    margin: 0 5px;                    
+                }
+            }
+            p {
+                font-size: 13px;
+                line-height: 20px;
+            }
         }
     }
 }
+
 .pieces-status {
         display: flex;
     .status {
@@ -41,7 +43,7 @@
         padding: 4px; 
         width: 1px;
         height: 1px; 
-        margin: 10px 0 10px 0;
+        margin: 10px 0 10px 20px;
     }
     .approved {
         background: $statusApproved;

@@ -21,9 +21,10 @@
             
             <textarea cols="30" rows="10" class="h5" placeholder="Description" name="description"></textarea>
             
-            <input type="file" id="imgInp" class="custom-file-input" name="profile_image">
-            <img class="user_image_upload" id="user-image-upload" src="images/icon/imagePlaceholder.jpg" alt="your image"/>
- 
+            <!-- <input type="file" id="imgInp" class="custom-file-input" name="profile_image"> -->
+            <!-- <img class="user_image_upload" id="user-image-upload" src="images/icon/imagePlaceholder.jpg" alt="your image"/> -->
+            <input class="h5" placeholder="Enter images url" name="profile_image">
+                  
             <button type="button" id="btnSignUpFacebook" class="btnLight">Sign up USING FACEBOOK</button>
             <button type="submit" id="btnSignUp" class="btnDark">SignUp</button>
         </form>
@@ -53,5 +54,5 @@
                 .attr("value", value.idlocation)
                 .text(value.country + ', ' + value.city)); 
         });
-    })
+    });
 </script>

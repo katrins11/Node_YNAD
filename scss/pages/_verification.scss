@@ -4,14 +4,19 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    background-color: $admin;
+    background-image: url('/images/background/adminMyProfile.png');
     padding-bottom: 85px;
 
 
     .verificationBox{
         width: 720px;
+        height: 350px;
         margin-top: 55px;
         background-color: $white;
+        h2{
+            margin-top: 20px;
+            text-align: center;
+        }
         form{
             width: 70%;
             margin: 65px 15%;

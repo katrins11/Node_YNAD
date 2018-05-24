@@ -1,17 +1,6 @@
-<section class="admin-header">
-    <div class="admin-headerToolbar">
-        <div class="admin-navbar-items">
-            <a href="/admin-my-profile" class="btnAdminDark">My Profile</a>
-            <a href="/admin-my-pieces" class="btnAdminDark">My Pieces</a>
-            <a href="/admin-add-piece" class="btnAdminDark">Admit New Piece</a>
-            <a href="/admin-chat" class="btnAdminDark">Need Help?</a>
-            <a href="/log-out" class="btnAdminDark">Sign Out</a>  
-        </div>
-    </div>
-</section>
-<section class="my-pieces-table">
-        <div class="pieces-table">
-            <table>
+<section class="my-pieces">
+        <div class="pieces-table divWhiteBox">
+            <table id="pieceList">
                 <tr>
                     <th>
                         <h5>Piece Image</h5>
@@ -23,13 +12,7 @@
                         <h5>Description</h5>
                     </th>
                     <th>
-                        <h5>Media</h5>
-                    </th>
-                    <th>
                         <h5>Marterial</h5>
-                    </th>
-                    <th>
-                        <h5>Year</h5>
                     </th>
                     <th>
                         <h5>Size</h5>
@@ -40,143 +23,11 @@
                     <th>
                         <h5>Status</h5>
                     </th>
+                    <th>
+                        <h5>Delete</h5>
+                    </th>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="piece-thumbnail">
-                            <img src="/images/pieces/abstract.png">
-                        </div>
-                    </td>
-                    <td>
-                        <p>Trash to treasure</p>
-                    </td>
-                    <td>
-                        <p>Lorizzle my shizz...</p>
-                    </td>
-                    <td>
-                        <p>Digital</p>
-                    </td>
-                    <td>
-                        <p>VHS</p>
-                    </td>
-                    <td>
-                        <p>2017</p>
-                    </td>
-                    <td>
-                        <p>20x30</p>
-                    </td>
-                    <td>
-                        <p>$100</p>
-                    </td>
-                    <td>
-                        <div class="pieces-status">
-                            <p>Pending</p>
-                            <div class="status pending"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="piece-thumbnail">
-                            <img src="../images/pieces/pigMan.png">
-                        </div>
-                    </td>
-                    <td>
-                        <p>Voices in the forrest</p>
-                    </td>
-                    <td>
-                        <p>Daahng dawg izzle owned...</p>
-                    </td>
-                    <td>
-                        <p>Mixed Media</p>
-                    </td>
-                    <td>
-                        <p>Wood, Clay and string</p>
-                    </td>
-                    <td>
-                        <p>2015</p>
-                    </td>
-                    <td>
-                        <p>50x60</p>
-                    </td>
-                    <td>
-                        <p>$100</p>
-                    </td>
-                    <td>
-                        <div class="pieces-status">
-                            <p>Approved</p>
-                            <div class="status approved"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="piece-thumbnail">
-                            <img src="/images/pieces/trappedWoman.png">
-                        </div>
-                    </td>
-                    <td>
-                        <p>Imaginary bullet</p>
-                    </td>
-                    <td>
-                        <p>Integizzle my shizz...</p>
-                    </td>
-                    <td>
-                        <p>Painting</p>
-                    </td>
-                    <td>
-                        <p>Oil Paint</p>
-                    </td>
-                    <td>
-                        <p>2016</p>
-                    </td>
-                    <td>
-                        <p>10x30</p>
-                    </td>
-                    <td>
-                        <p>$100</p>
-                    </td>
-                    <td>
-                        <div class="pieces-status">
-                            <p>Pending</p>
-                            <div class="status pending"></div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="piece-thumbnail">
-                            <img src="/images/pieces/pigMan.png">
-                        </div>
-                    </td>
-                    <td>
-                        <p>Trash to treasure</p>
-                    </td>
-                    <td>
-                        <p>Lorizzle my shizz...</p>
-                    </td>
-                    <td>
-                        <p>Digital</p>
-                    </td>
-                    <td>
-                        <p>VHS</p>
-                    </td>
-                    <td>
-                        <p>2017</p>
-                    </td>
-                    <td>
-                        <p>20x30</p>
-                    </td>
-                    <td>
-                        <p>$100</p>
-                    </td>
-                    <td>
-                        <div class="pieces-status">
-                            <p>Denied</p>
-                            <div class="status denied"></div>
-                        </div>
-                    </td>
-                </tr>
+                {{listOfPieces}}
             </table>
         </div>
-      </section>
+</section>

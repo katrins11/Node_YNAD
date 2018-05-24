@@ -1,7 +1,6 @@
-#signUp{
+#logIn{
     width: 100%;
     height: calc(100vh - 95px);
-    overflow-y: hidden;
     background-color: rgba($darkBlue, 0.5);
     display: flex;
     justify-content: center;
@@ -9,13 +8,13 @@
     top: 100px;
 }
 
-#formSignUp{
+#formLogIn{
     width: 720px;
+    height: 580px;
     margin-top: 55px;
     background-color: $white;
-    overflow: scroll;
 
-    .formSignUp__header{
+    .formLogIn__header{
         width: 100%;
         height: 135px;
         padding-top: 30px;
@@ -40,9 +39,9 @@
         }
     }
 
-    .signUpForm{
+    .logInForm{
         width: 70%;
-        margin: 65px 15%;
+        margin: 25px 15%;
     }
     input{
         width: 100%;
@@ -59,20 +58,6 @@
     input::-webkit-input-placeholder {
         color: $inputText;
     }
-    textarea, select{
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid $lightGrey;
-        color: $black;
-    }
-    textarea::-webkit-input-placeholder {
-        color: $inputText;
-    }
-    select{
-        height: 35px;
-        background-color: $white;
-        color: $inputText;
-    }
     .h5{
         font-weight: $fontRegular;
     }
@@ -86,10 +71,6 @@
                 margin-right: 4%;
             }
         }
-    }
-    .user_image_upload {
-        width: 262px;
-        margin-top: 10px;
     }
     .custom-file-input::-webkit-file-upload-button {
         visibility: hidden;

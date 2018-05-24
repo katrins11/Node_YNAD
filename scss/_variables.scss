@@ -29,6 +29,9 @@ $fontBlack: 900;
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+}
 
 /* *** *** *** Header *** *** *** */
 h1, .h1{
@@ -194,9 +197,14 @@ button {
 }
 .emptyPage{
     width: 100vw;
-    height: calc(100vh - 265px);
+    height: calc(100vh - 95px);
     background-image: url('/images/background/adminMyProfile.png');
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.backgroun-front{
+    width: 100vw;
+    height: calc(100vh - 95px);
+    background-image: url('/images/background/frontHero.png');
 }
