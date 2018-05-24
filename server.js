@@ -40,7 +40,6 @@ const sHeaderHTML = gFs.readFileSync( __dirname + '/html/header.html', 'utf8');
 const sAdminHeaderHTML = gFs.readFileSync( __dirname + '/html/admin-header.html', 'utf8');
 const sFooterHTML = gFs.readFileSync( __dirname + '/html/footer.html', 'utf8');
 
-const sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
 const sHomeHTML = gFs.readFileSync( __dirname + '/html/pages/home.html', 'utf8');
 
 const sAboutHTML = gFs.readFileSync( __dirname + '/html/pages/about.html', 'utf8');
@@ -49,11 +48,6 @@ const sCreativesHTML = gFs.readFileSync( __dirname + '/html/pages/creatives.html
 const sPiecesHTML = gFs.readFileSync( __dirname + '/html/pages/pieces.html', 'utf8');
 const sSmsHTML = gFs.readFileSync( __dirname + '/html/pages/sms.html', 'utf8');
 const sChatHTML = gFs.readFileSync( __dirname + '/html/admin/admin-chat.html', 'utf8');
-
-/* *** CHANGEABLE INFORMATIONS SO... VAR *** */
-var sMyProfileHTML = gFs.readFileSync( __dirname + '/html/admin/admin-my-profile.html', 'utf8');
-var sEditProfileHTML = gFs.readFileSync( __dirname + '/html/admin/admin-edit-profile.html', 'utf8');
-var sMyPiecesHTML = gFs.readFileSync( __dirname + '/html/admin/admin-my-pieces.html', 'utf8');
 
 /* *** JS FILES *** */
 const ChatFile = require(__dirname + '/public/js/chat.js');
@@ -104,6 +98,8 @@ app.get('/get-user-location', (req, res) => {
     UserFile.getUserLocation(req, res);
 });
 app.get('/sign-up', (req, res) => {
+    var sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
+    sFrontBackgroundHTML = sFrontBackgroundHTML.replace('{{backgroundSize}}', 'backgroun-front-long');
     res.send(sHeaderHTML + sFrontBackgroundHTML + sSignUpHTML + sFooterHTML);
 });
 app.post('/sign-up', (req, res) => {
@@ -119,6 +115,8 @@ app.post('/verification',(req, res) => {
 
 /* *** *** LogIn *** *** */
 app.get('/log-in', (req, res) => {
+    var sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
+    sFrontBackgroundHTML = sFrontBackgroundHTML.replace('{{backgroundSize}}', 'backgroun-front');
     res.send(sHeaderHTML + sFrontBackgroundHTML + sLogInHTML + sFooterHTML);
 });
 app.post('/log-in', passport.authenticate('local',{
@@ -191,6 +189,7 @@ app.post('/sms', (req, res) => {
 /* *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** ADMIN *** */
 /* *** *** Get My Profile *** *** */
 app.get('/admin-my-profile', authenticationMiddleware(), (req, res) => { 
+    var sMyProfileHTML = gFs.readFileSync( __dirname + '/html/admin/admin-my-profile.html', 'utf8');
     UserFile.getLoggedInUserInfo(req, res, function (err, datafromDB) {
         if (err) {
           someerrorjson = { some: 'error'}
@@ -204,7 +203,7 @@ app.get('/admin-my-profile', authenticationMiddleware(), (req, res) => {
         sMyProfileHTML = sMyProfileHTML.replace('{{userProfileImage}}', datafromDB[0].profile_image);
         sMyProfileHTML = sMyProfileHTML.replace('{{userFacebook}}', datafromDB[0].facebook_url);
         sMyProfileHTML = sMyProfileHTML.replace('{{userInstagram}}', datafromDB[0].instagram_url);
-        sMyProfileHTML = sMyProfileHTML.replace('{{ userTwitter}}', datafromDB[0].twitter_url);
+        sMyProfileHTML = sMyProfileHTML.replace('{{userTwitter}}', datafromDB[0].twitter_url);
         sMyProfileHTML = sMyProfileHTML.replace('{{userMail}}', datafromDB[0].email);
         sMyProfileHTML = sMyProfileHTML.replace('{{userMail2}}', datafromDB[0].email);
         sMyProfileHTML = sMyProfileHTML.replace('{{userPhone}}', datafromDB[0].phone_number);
@@ -216,6 +215,7 @@ app.get('/admin-my-profile', authenticationMiddleware(), (req, res) => {
 
 /* *** *** Get Profile Info in Form: *** *** */
 app.get('/admin-edit-profile', authenticationMiddleware(), (req, res) => {
+    var sEditProfileHTML = gFs.readFileSync( __dirname + '/html/admin/admin-edit-profile.html', 'utf8');
     UserFile.getLoggedInUserForInput(req, res, function (err, datafromDB) {
         if (err) {
           someerrorjson = { some: 'error'}
@@ -241,6 +241,7 @@ app.post('/admin-edit-profile',(req, res) => {
 /* *** *** My Pieces *** *** */
 app.get('/admin-my-pieces', authenticationMiddleware(), (req, res) => {
     // PiecesFile.getPieces(req, res);
+    var sMyPiecesHTML = gFs.readFileSync( __dirname + '/html/admin/admin-my-pieces.html', 'utf8');
     var stmt = 'SELECT * FROM pieces';
     try{
         db.query(stmt, (err, ajData)=>{

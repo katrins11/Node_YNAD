@@ -173,11 +173,17 @@ button {
 .btnLogo{
     padding: 0;
 }
+
 .divWhiteBox{
     max-width: 1125px;
     background: #FFFFFF;
     box-shadow: 4px 6px 20px 0 rgba(49,86,126,0.08);
 }
+
+input{
+    outline: none;
+}
+
 .lineLeft{
     border-left: 1px solid $lightBlue;
     img{
@@ -206,5 +212,10 @@ button {
 .backgroun-front{
     width: 100vw;
     height: calc(100vh - 95px);
+    background-image: url('/images/background/frontHero.png');
+}
+.backgroun-front-long{
+    width: 100vw;
+    height: 160vh;
     background-image: url('/images/background/frontHero.png');
 }

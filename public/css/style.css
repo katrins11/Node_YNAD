@@ -157,6 +157,9 @@ button {
   background: #FFFFFF;
   box-shadow: 4px 6px 20px 0 rgba(49, 86, 126, 0.08); }
 
+input {
+  outline: none; }
+
 .lineLeft {
   border-left: 1px solid #8091A5; }
   .lineLeft img {
@@ -183,6 +186,11 @@ button {
 .backgroun-front {
   width: 100vw;
   height: calc(100vh - 95px);
+  background-image: url("/images/background/frontHero.png"); }
+
+.backgroun-front-long {
+  width: 100vw;
+  height: 160vh;
   background-image: url("/images/background/frontHero.png"); }
 
 /*====================================================*/
@@ -462,8 +470,8 @@ button {
 /*====================================================*/
 #signUp {
   width: 100%;
-  height: calc(100vh - 95px);
-  overflow-y: hidden;
+  height: 150vh;
+  padding-bottom: 90px;
   background-color: rgba(40, 56, 73, 0.5);
   display: flex;
   justify-content: center;
@@ -473,8 +481,7 @@ button {
 #formSignUp {
   width: 720px;
   margin-top: 55px;
-  background-color: #FFFFFF;
-  overflow: scroll; }
+  background-color: #FFFFFF; }
   #formSignUp .formSignUp__header {
     width: 100%;
     height: 135px;

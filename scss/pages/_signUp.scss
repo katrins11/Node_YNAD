@@ -1,7 +1,7 @@
 #signUp{
     width: 100%;
-    height: calc(100vh - 95px);
-    overflow-y: hidden;
+    height: 150vh;
+    padding-bottom: 90px;
     background-color: rgba($darkBlue, 0.5);
     display: flex;
     justify-content: center;
@@ -13,7 +13,6 @@
     width: 720px;
     margin-top: 55px;
     background-color: $white;
-    overflow: scroll;
 
     .formSignUp__header{
         width: 100%;
