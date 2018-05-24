@@ -167,6 +167,7 @@ app.get('/pieces', (req, res) => {
 /* *** *** SMS *** *** */
 app.get('/sms', (req, res) => {
     var sFrontBackgroundHTML = gFs.readFileSync( __dirname + '/html/background-front.html', 'utf8');
+    sFrontBackgroundHTML = sFrontBackgroundHTML.replace('{{backgroundSize}}', 'backgroun-front');
     if(req.isAuthenticated()){
         res.send(sAdminHeaderHTML + sFrontBackgroundHTML + sSmsHTML + sFooterHTML);
     }
