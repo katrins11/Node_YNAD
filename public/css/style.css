@@ -190,7 +190,7 @@ input {
 
 .backgroun-front-long {
   width: 100vw;
-  height: 160vh;
+  height: 150vh;
   background-image: url("/images/background/frontHero.png"); }
 
 /*====================================================*/
@@ -470,7 +470,7 @@ input {
 /*====================================================*/
 #signUp {
   width: 100%;
-  height: 150vh;
+  height: 140vh;
   padding-bottom: 90px;
   background-color: rgba(40, 56, 73, 0.5);
   display: flex;
